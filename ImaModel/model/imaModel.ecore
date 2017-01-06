@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="imaModel" nsURI="http://www.example.org/imaModel" nsPrefix="imaModel">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Noeud" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionIf" eType="#//Condition"
+        eOpposite="#//Condition/if"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionElse" eType="#//Condition"
+        eOpposite="#//Condition/else"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prevFilter" eType="#//Filtre"
+        eOpposite="#//Filtre/next"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prevAction" eType="#//Action"
+        eOpposite="#//Action/next"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Filtre" abstract="true" eSuperTypes="#//Noeud">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initFiltre" eType="#//Init"
+        eOpposite="#//Init/filtreInit"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" lowerBound="1" eType="#//Noeud"
+        containment="true" eOpposite="#//Noeud/prevFilter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true" eSuperTypes="#//Noeud">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//Noeud"
+        containment="true" eOpposite="#//Noeud/prevAction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plot" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Print" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Prog">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="init" lowerBound="1" upperBound="-1"
+        eType="#//Init" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Init">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filtreInit" lowerBound="1"
+        eType="#//Filtre" containment="true" eOpposite="#//Filtre/initFiltre"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hashtag" eSuperTypes="#//Filtre"/>
+  <eClassifiers xsi:type="ecore:EClass" name="User" eSuperTypes="#//Filtre"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Localisation" eSuperTypes="#//Filtre"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//Noeud">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="if" lowerBound="1" eType="#//Noeud"
+        containment="true" eOpposite="#//Noeud/conditionIf"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="else" lowerBound="1" eType="#//Noeud"
+        containment="true" eOpposite="#//Noeud/conditionElse"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

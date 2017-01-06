@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imaModel:Prog
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:imaModel="http://www.example.org/imaModel"
+    xsi:schemaLocation="http://www.example.org/imaModel imaModel.ecore">
+  <init>
+    <filtreInit
+        xsi:type="imaModel:User"
+        filterName="Ali">
+      <next
+          xsi:type="imaModel:Print"/>
+    </filtreInit>
+  </init>
+  <init>
+    <filtreInit
+        xsi:type="imaModel:User"
+        filterName="Ilyasse">
+      <next
+          xsi:type="imaModel:Localisation"
+          filterName="Casa">
+        <next
+            xsi:type="imaModel:Condition">
+          <if
+              xsi:type="imaModel:Print"/>
+          <else
+              xsi:type="imaModel:Plot"/>
+        </next>
+      </next>
+    </filtreInit>
+  </init>
+</imaModel:Prog>
