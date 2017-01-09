@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated imaModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="imaModel.presentation.ImaModelModelWizardID"
+            name="%_UI_ImaModelModelWizard_label"
+            class="imaModel.presentation.ImaModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ImaModelModelFile.gif">
+         <description>%_UI_ImaModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated imaModel -->
+      <editor
+            id="imaModel.presentation.ImaModelEditorID"
+            name="%_UI_ImaModelEditor_label"
+            icon="icons/full/obj16/ImaModelModelFile.gif"
+            extensions="imamodel"
+            class="imaModel.presentation.ImaModelEditor"
+            contributorClass="imaModel.presentation.ImaModelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

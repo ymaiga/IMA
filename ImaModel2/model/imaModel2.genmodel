@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ImaModel2/src" modelPluginID="ImaModel2" modelName="ImaModel2"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>imaModel2.ecore</foreignModel>
+  <genPackages prefix="ImaModel2" disposableProviderFactory="true" ecorePackage="imaModel2.ecore#/">
+    <genClasses ecoreClass="imaModel2.ecore#//Noeud">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Noeud/arcSortants"/>
+    </genClasses>
+    <genClasses ecoreClass="imaModel2.ecore#//Prog">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Prog/noeuds"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Prog/init"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Prog/chemin"/>
+    </genClasses>
+    <genClasses ecoreClass="imaModel2.ecore#//Init">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Init/filtre"/>
+    </genClasses>
+    <genClasses ecoreClass="imaModel2.ecore#//Filtre">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute imaModel2.ecore#//Filtre/name"/>
+    </genClasses>
+    <genClasses ecoreClass="imaModel2.ecore#//Action"/>
+    <genClasses ecoreClass="imaModel2.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute imaModel2.ecore#//Condition/operator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Condition/if"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Condition/else"/>
+    </genClasses>
+    <genClasses ecoreClass="imaModel2.ecore#//Localisation"/>
+    <genClasses ecoreClass="imaModel2.ecore#//User"/>
+    <genClasses ecoreClass="imaModel2.ecore#//Hashtag"/>
+    <genClasses ecoreClass="imaModel2.ecore#//Plot"/>
+    <genClasses ecoreClass="imaModel2.ecore#//AVG_Like"/>
+    <genClasses ecoreClass="imaModel2.ecore#//Print"/>
+    <genClasses ecoreClass="imaModel2.ecore#//Followers"/>
+    <genClasses ecoreClass="imaModel2.ecore#//Positif"/>
+    <genClasses ecoreClass="imaModel2.ecore#//Negatif"/>
+    <genClasses ecoreClass="imaModel2.ecore#//Arc">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute imaModel2.ecore#//Arc/couleur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Arc/next"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute imaModel2.ecore#//Arc/id"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
