@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="myproject" version="11.1.1.201610211630">
+  <ownedViewpoints name="MyViewpoint">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Prog" initialisation="true" domainClass="imaModel2.Prog" enablePopupBars="true">
+      <metamodel href="../../ImaModel2/model/imaModel2.ecore#/"/>
+      <defaultLayer name="Prog">
+        <nodeMappings name="Hashtag" domainClass="imaModel2.Hashtag">
+          <borderedNodeMappings name="ArcSortant" semanticCandidatesExpression="feature:arcSortants" domainClass="imaModel2.Arc">
+            <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="feature:couleur" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['#'+name/]" labelPosition="node" resizeKind="NSEW" width="10" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Localisation" domainClass="imaModel2.Localisation">
+          <borderedNodeMappings name="ArcSortant" semanticCandidatesExpression="feature:arcSortants" domainClass="imaModel2.Arc">
+            <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="feature:couleur" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['#'+name/]" labelPosition="node" resizeKind="NSEW" width="10" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Condition" domainClass="imaModel2.Condition">
+          <style xsi:type="style:LozengeNodeDescription" labelSize="12" labelExpression="feature:operator" sizeComputationExpression="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="User" domainClass="imaModel2.User">
+          <borderedNodeMappings name="ArcSortant" semanticCandidatesExpression="feature:arcSortants" domainClass="imaModel2.Arc">
+            <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="feature:couleur" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['@'+name/]" labelPosition="node" resizeKind="NSEW" width="10" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Print" domainClass="imaModel2.Print">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="3" borderLineStyle="dash_dot" labelSize="12" showIcon="false" labelExpression="Print" labelPosition="node" resizeKind="NSEW" width="10" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Positif" domainClass="imaModel2.Positif">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="3" borderLineStyle="dash_dot" labelSize="12" showIcon="false" labelExpression="Positif" labelPosition="node" resizeKind="NSEW" width="10" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Arc" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']/@borderedNodeMappings[name='ArcSortant'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation']/@borderedNodeMappings[name='ArcSortant'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User']/@borderedNodeMappings[name='ArcSortant']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Condition'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Print'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']" targetFinderExpression="feature:next">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Hashtag" label="New Hashtag" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="imaModel2.Hashtag" referenceName="noeuds">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="newHashtag"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Localisation" label="New Localisation" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="imaModel2.Localisation" referenceName="noeuds">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="newLocalisation"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create User" label="New User" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="imaModel2.Localisation" referenceName="noeuds">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="newUser"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
