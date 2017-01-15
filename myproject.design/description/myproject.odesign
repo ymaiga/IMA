@@ -2,8 +2,8 @@
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="myproject" version="11.1.1.201610211630">
   <ownedViewpoints name="MyViewpoint">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Prog" initialisation="true" domainClass="imaModel2.Prog" enablePopupBars="true">
-      <metamodel href="../../ImaModel2/model/imaModel2.ecore#/"/>
-      <defaultLayer name="Prog">
+      <metamodel href="http://www.example.org/imaModel2#/"/>
+      <defaultLayer name="Prog_layer" label="prog_layer">
         <nodeMappings name="Hashtag" domainClass="imaModel2.Hashtag">
           <borderedNodeMappings name="ArcSortant" semanticCandidatesExpression="feature:arcSortants" domainClass="imaModel2.Arc">
             <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="feature:couleur" labelPosition="node" resizeKind="NSEW">
@@ -77,8 +77,8 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <toolSections>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Hashtag" label="New Hashtag" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']">
+        <toolSections name="section_palette">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newHastag" label="NewHashtag" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -89,7 +89,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Localisation" label="New Localisation" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newLocalisation" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -100,7 +100,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create User" label="New User" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newUser" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
