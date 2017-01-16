@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Noeud extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Arc Sortants</b></em>' reference list.
+	 * Returns the value of the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * The list contents are of type {@link imaModel2.Arc}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -32,9 +32,9 @@ public interface Noeud extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Arc Sortants</em>' reference list.
+	 * @return the value of the '<em>Arc Sortants</em>' containment reference list.
 	 * @see imaModel2.ImaModel2Package#getNoeud_ArcSortants()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Arc> getArcSortants();

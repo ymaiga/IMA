@@ -8,13 +8,16 @@ import imaModel2.Noeud;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public abstract class NoeudImpl extends MinimalEObjectImpl.Container implements Noeud {
 	/**
-	 * The cached value of the '{@link #getArcSortants() <em>Arc Sortants</em>}' reference list.
+	 * The cached value of the '{@link #getArcSortants() <em>Arc Sortants</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getArcSortants()
@@ -66,9 +69,23 @@ public abstract class NoeudImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	public EList<Arc> getArcSortants() {
 		if (arcSortants == null) {
-			arcSortants = new EObjectResolvingEList<Arc>(Arc.class, this, ImaModel2Package.NOEUD__ARC_SORTANTS);
+			arcSortants = new EObjectContainmentEList<Arc>(Arc.class, this, ImaModel2Package.NOEUD__ARC_SORTANTS);
 		}
 		return arcSortants;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ImaModel2Package.NOEUD__ARC_SORTANTS:
+				return ((InternalEList<?>)getArcSortants()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

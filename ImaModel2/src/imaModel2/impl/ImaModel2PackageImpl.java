@@ -258,15 +258,6 @@ public class ImaModel2PackageImpl extends EPackageImpl implements ImaModel2Packa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProg_Chemin() {
-		return (EReference)progEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getInit() {
 		return initEClass;
 	}
@@ -494,7 +485,6 @@ public class ImaModel2PackageImpl extends EPackageImpl implements ImaModel2Packa
 		progEClass = createEClass(PROG);
 		createEReference(progEClass, PROG__NOEUDS);
 		createEReference(progEClass, PROG__INIT);
-		createEReference(progEClass, PROG__CHEMIN);
 
 		initEClass = createEClass(INIT);
 		createEReference(initEClass, INIT__FILTRE);
@@ -576,12 +566,11 @@ public class ImaModel2PackageImpl extends EPackageImpl implements ImaModel2Packa
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(noeudEClass, Noeud.class, "Noeud", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNoeud_ArcSortants(), this.getArc(), null, "arcSortants", null, 0, -1, Noeud.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNoeud_ArcSortants(), this.getArc(), null, "arcSortants", null, 0, -1, Noeud.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(progEClass, Prog.class, "Prog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProg_Noeuds(), this.getNoeud(), null, "noeuds", null, 0, -1, Prog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProg_Init(), this.getInit(), null, "init", null, 0, -1, Prog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProg_Chemin(), this.getArc(), null, "chemin", null, 0, -1, Prog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(initEClass, Init.class, "Init", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInit_Filtre(), this.getFiltre(), null, "filtre", null, 1, 1, Init.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -616,7 +605,7 @@ public class ImaModel2PackageImpl extends EPackageImpl implements ImaModel2Packa
 
 		initEClass(arcEClass, Arc.class, "Arc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArc_Couleur(), ecorePackage.getEInt(), "couleur", null, 1, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArc_Next(), this.getNoeud(), null, "next", null, 1, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArc_Next(), this.getNoeud(), null, "next", null, 0, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArc_Id(), ecorePackage.getEString(), "id", null, 1, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

@@ -2,7 +2,6 @@
  */
 package imaModel2.impl;
 
-import imaModel2.Arc;
 import imaModel2.ImaModel2Package;
 import imaModel2.Init;
 import imaModel2.Noeud;
@@ -32,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link imaModel2.impl.ProgImpl#getNoeuds <em>Noeuds</em>}</li>
  *   <li>{@link imaModel2.impl.ProgImpl#getInit <em>Init</em>}</li>
- *   <li>{@link imaModel2.impl.ProgImpl#getChemin <em>Chemin</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,16 +55,6 @@ public class ProgImpl extends MinimalEObjectImpl.Container implements Prog {
 	 * @ordered
 	 */
 	protected EList<Init> init;
-
-	/**
-	 * The cached value of the '{@link #getChemin() <em>Chemin</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChemin()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Arc> chemin;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,18 +104,6 @@ public class ProgImpl extends MinimalEObjectImpl.Container implements Prog {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Arc> getChemin() {
-		if (chemin == null) {
-			chemin = new EObjectContainmentEList<Arc>(Arc.class, this, ImaModel2Package.PROG__CHEMIN);
-		}
-		return chemin;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -135,8 +111,6 @@ public class ProgImpl extends MinimalEObjectImpl.Container implements Prog {
 				return ((InternalEList<?>)getNoeuds()).basicRemove(otherEnd, msgs);
 			case ImaModel2Package.PROG__INIT:
 				return ((InternalEList<?>)getInit()).basicRemove(otherEnd, msgs);
-			case ImaModel2Package.PROG__CHEMIN:
-				return ((InternalEList<?>)getChemin()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,8 +127,6 @@ public class ProgImpl extends MinimalEObjectImpl.Container implements Prog {
 				return getNoeuds();
 			case ImaModel2Package.PROG__INIT:
 				return getInit();
-			case ImaModel2Package.PROG__CHEMIN:
-				return getChemin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,10 +148,6 @@ public class ProgImpl extends MinimalEObjectImpl.Container implements Prog {
 				getInit().clear();
 				getInit().addAll((Collection<? extends Init>)newValue);
 				return;
-			case ImaModel2Package.PROG__CHEMIN:
-				getChemin().clear();
-				getChemin().addAll((Collection<? extends Arc>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -198,9 +166,6 @@ public class ProgImpl extends MinimalEObjectImpl.Container implements Prog {
 			case ImaModel2Package.PROG__INIT:
 				getInit().clear();
 				return;
-			case ImaModel2Package.PROG__CHEMIN:
-				getChemin().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -217,8 +182,6 @@ public class ProgImpl extends MinimalEObjectImpl.Container implements Prog {
 				return noeuds != null && !noeuds.isEmpty();
 			case ImaModel2Package.PROG__INIT:
 				return init != null && !init.isEmpty();
-			case ImaModel2Package.PROG__CHEMIN:
-				return chemin != null && !chemin.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

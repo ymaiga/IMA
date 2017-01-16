@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link imaModel2.Prog#getNoeuds <em>Noeuds</em>}</li>
  *   <li>{@link imaModel2.Prog#getInit <em>Init</em>}</li>
- *   <li>{@link imaModel2.Prog#getChemin <em>Chemin</em>}</li>
  * </ul>
  *
  * @see imaModel2.ImaModel2Package#getProg()
@@ -56,21 +55,5 @@ public interface Prog extends EObject {
 	 * @generated
 	 */
 	EList<Init> getInit();
-
-	/**
-	 * Returns the value of the '<em><b>Chemin</b></em>' containment reference list.
-	 * The list contents are of type {@link imaModel2.Arc}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Chemin</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Chemin</em>' containment reference list.
-	 * @see imaModel2.ImaModel2Package#getProg_Chemin()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Arc> getChemin();
 
 } // Prog

@@ -3,15 +3,13 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="imaModel2" nsURI="http://www.example.org/imaModel2" nsPrefix="imaModel2">
   <eClassifiers xsi:type="ecore:EClass" name="Noeud" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="arcSortants" upperBound="-1"
-        eType="#//Arc"/>
+        eType="#//Arc" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Prog">
     <eStructuralFeatures xsi:type="ecore:EReference" name="noeuds" upperBound="-1"
         eType="#//Noeud" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="init" upperBound="-1" eType="#//Init"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="chemin" upperBound="-1"
-        eType="#//Arc" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Init">
     <eStructuralFeatures xsi:type="ecore:EReference" name="filtre" lowerBound="1"
@@ -39,7 +37,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Arc">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="couleur" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="next" lowerBound="1" eType="#//Noeud"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//Noeud"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

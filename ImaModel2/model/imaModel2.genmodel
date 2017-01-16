@@ -6,12 +6,11 @@
   <foreignModel>imaModel2.ecore</foreignModel>
   <genPackages prefix="ImaModel2" disposableProviderFactory="true" ecorePackage="imaModel2.ecore#/">
     <genClasses ecoreClass="imaModel2.ecore#//Noeud">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Noeud/arcSortants"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Noeud/arcSortants"/>
     </genClasses>
     <genClasses ecoreClass="imaModel2.ecore#//Prog">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Prog/noeuds"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Prog/init"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Prog/chemin"/>
     </genClasses>
     <genClasses ecoreClass="imaModel2.ecore#//Init">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference imaModel2.ecore#//Init/filtre"/>

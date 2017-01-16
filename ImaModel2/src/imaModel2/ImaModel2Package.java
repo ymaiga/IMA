@@ -67,7 +67,7 @@ public interface ImaModel2Package extends EPackage {
 	int NOEUD = 0;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -122,22 +122,13 @@ public interface ImaModel2Package extends EPackage {
 	int PROG__INIT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Chemin</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROG__CHEMIN = 2;
-
-	/**
 	 * The number of structural features of the '<em>Prog</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROG_FEATURE_COUNT = 3;
+	int PROG_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Prog</em>' class.
@@ -196,7 +187,7 @@ public interface ImaModel2Package extends EPackage {
 	int FILTRE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -242,7 +233,7 @@ public interface ImaModel2Package extends EPackage {
 	int ACTION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -279,7 +270,7 @@ public interface ImaModel2Package extends EPackage {
 	int CONDITION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -343,7 +334,7 @@ public interface ImaModel2Package extends EPackage {
 	int LOCALISATION = 6;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -389,7 +380,7 @@ public interface ImaModel2Package extends EPackage {
 	int USER = 7;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -435,7 +426,7 @@ public interface ImaModel2Package extends EPackage {
 	int HASHTAG = 8;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -481,7 +472,7 @@ public interface ImaModel2Package extends EPackage {
 	int PLOT = 9;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -518,7 +509,7 @@ public interface ImaModel2Package extends EPackage {
 	int AVG_LIKE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -555,7 +546,7 @@ public interface ImaModel2Package extends EPackage {
 	int PRINT = 11;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -592,7 +583,7 @@ public interface ImaModel2Package extends EPackage {
 	int FOLLOWERS = 12;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -629,7 +620,7 @@ public interface ImaModel2Package extends EPackage {
 	int POSITIF = 13;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -666,7 +657,7 @@ public interface ImaModel2Package extends EPackage {
 	int NEGATIF = 14;
 
 	/**
-	 * The feature id for the '<em><b>Arc Sortants</b></em>' reference list.
+	 * The feature id for the '<em><b>Arc Sortants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -759,10 +750,10 @@ public interface ImaModel2Package extends EPackage {
 	EClass getNoeud();
 
 	/**
-	 * Returns the meta object for the reference list '{@link imaModel2.Noeud#getArcSortants <em>Arc Sortants</em>}'.
+	 * Returns the meta object for the containment reference list '{@link imaModel2.Noeud#getArcSortants <em>Arc Sortants</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Arc Sortants</em>'.
+	 * @return the meta object for the containment reference list '<em>Arc Sortants</em>'.
 	 * @see imaModel2.Noeud#getArcSortants()
 	 * @see #getNoeud()
 	 * @generated
@@ -800,17 +791,6 @@ public interface ImaModel2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getProg_Init();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link imaModel2.Prog#getChemin <em>Chemin</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Chemin</em>'.
-	 * @see imaModel2.Prog#getChemin()
-	 * @see #getProg()
-	 * @generated
-	 */
-	EReference getProg_Chemin();
 
 	/**
 	 * Returns the meta object for class '{@link imaModel2.Init <em>Init</em>}'.
@@ -1074,7 +1054,7 @@ public interface ImaModel2Package extends EPackage {
 		EClass NOEUD = eINSTANCE.getNoeud();
 
 		/**
-		 * The meta object literal for the '<em><b>Arc Sortants</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Arc Sortants</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1106,14 +1086,6 @@ public interface ImaModel2Package extends EPackage {
 		 * @generated
 		 */
 		EReference PROG__INIT = eINSTANCE.getProg_Init();
-
-		/**
-		 * The meta object literal for the '<em><b>Chemin</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROG__CHEMIN = eINSTANCE.getProg_Chemin();
 
 		/**
 		 * The meta object literal for the '{@link imaModel2.impl.InitImpl <em>Init</em>}' class.

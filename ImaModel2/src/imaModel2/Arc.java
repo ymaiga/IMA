@@ -60,7 +60,7 @@ public interface Arc extends EObject {
 	 * @return the value of the '<em>Next</em>' reference.
 	 * @see #setNext(Noeud)
 	 * @see imaModel2.ImaModel2Package#getArc_Next()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	Noeud getNext();
