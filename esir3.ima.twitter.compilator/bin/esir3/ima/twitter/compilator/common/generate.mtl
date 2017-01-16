@@ -1,0 +1,34 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/uml2/5.0.0/UML', 'http://www.example.org/imaModel2')]
+[import esir3::ima::twitter::visitors::visitorNoeud /]
+[import esir3::ima::twitter::visitors::visitorProg /]
+[import  esir3::ima::twitter::visitors::utils/]
+[template public generateElement(prog : Prog)]
+[comment @main/]
+[file ('MainClass.java', false, 'UTF-8')]
+public class MainClass{
+	[prog.visite()/]
+	public static void main(String['[]'/] args){
+	 [for (deb : Init | prog._init)]
+	 	[let filtre : Filtre = deb.filtre]
+	 		[for (arc : Arc | filtre.arcSortants)]
+			
+	 			List<String> args_[arc.couleur/] = new ArryList<String>();
+				[iterateonChem(filtre, arc, 'args_'+arc.couleur)/]
+	 		[/for]
+	 	[/let]
+	 [/for]
+	
+	}
+
+}
+[/file]
+[/template]
+
+[comment][query public getNodeChem(noeud : Noeud,num : Integer) : Noeud = 
+[for (arc : Arc | noeud.arcSortants)]
+	[if (arc.couleur = num)]
+		
+	[/if]
+[/for]
+/][/comment]
