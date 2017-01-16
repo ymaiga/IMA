@@ -4,6 +4,7 @@ package imaModel2.impl;
 
 import imaModel2.Hashtag;
 import imaModel2.ImaModel2Package;
+import imaModel2.VisitorJava;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -32,6 +33,11 @@ public class HashtagImpl extends FiltreImpl implements Hashtag {
 	@Override
 	protected EClass eStaticClass() {
 		return ImaModel2Package.Literals.HASHTAG;
+	}
+
+	@Override
+	public String acceptVisitor(VisitorJava v) {
+		return v.visite(this);
 	}
 
 } //HashtagImpl

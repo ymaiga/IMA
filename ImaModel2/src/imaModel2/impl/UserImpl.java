@@ -4,6 +4,7 @@ package imaModel2.impl;
 
 import imaModel2.ImaModel2Package;
 import imaModel2.User;
+import imaModel2.VisitorJava;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -32,6 +33,11 @@ public class UserImpl extends FiltreImpl implements User {
 	@Override
 	protected EClass eStaticClass() {
 		return ImaModel2Package.Literals.USER;
+	}
+
+	@Override
+	public String acceptVisitor(VisitorJava v) {
+		return v.visite(this);
 	}
 
 } //UserImpl

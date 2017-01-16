@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:imaModel2="http://www.example.org/imaModel2" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.example.org/imaModel2 platform:/resource/ImaModel2/model/imaModel2.ecore">
+  <viewpoint:DAnalysis xmi:id="_PrgFANw6Eeaomo_X6szoBw" selectedViews="_QXK4MNw6Eeaomo_X6szoBw" version="11.1.0.201608251200">
+    <semanticResources>Prog.xmi</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_QXK4MNw6Eeaomo_X6szoBw">
+      <viewpoint xmi:type="description:Viewpoint" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_QXiEkNw6Eeaomo_X6szoBw" name="Prog" representation="_QXiEkdw6Eeaomo_X6szoBw">
+        <description xmi:type="description_1:DiagramDescription" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']"/>
+        <target xmi:type="imaModel2:Prog" href="Prog.xmi#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_QXiEkdw6Eeaomo_X6szoBw" name="Prog">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_QXiEktw6Eeaomo_X6szoBw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_QXiEk9w6Eeaomo_X6szoBw"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_QYIhgNw6Eeaomo_X6szoBw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_QYIhgdw6Eeaomo_X6szoBw" type="Sirius" element="_QXiEkdw6Eeaomo_X6szoBw" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_QYIhgtw6Eeaomo_X6szoBw"/>
+      </data>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_QXiElNw6Eeaomo_X6szoBw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer"/>
+    <target xmi:type="imaModel2:Prog" href="Prog.xmi#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

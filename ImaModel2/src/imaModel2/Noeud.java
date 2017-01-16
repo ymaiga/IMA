@@ -38,5 +38,6 @@ public interface Noeud extends EObject {
 	 * @generated
 	 */
 	EList<Arc> getArcSortants();
+	public String acceptVisitor(VisitorJava v);
 
 } // Noeud

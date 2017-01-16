@@ -5,6 +5,7 @@ package imaModel2.impl;
 import imaModel2.Condition;
 import imaModel2.ImaModel2Package;
 import imaModel2.Noeud;
+import imaModel2.VisitorJava;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -279,6 +280,11 @@ public class ConditionImpl extends NoeudImpl implements Condition {
 		result.append(operator);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public String acceptVisitor(VisitorJava v) {
+		return v.visite(this);
 	}
 
 } //ConditionImpl

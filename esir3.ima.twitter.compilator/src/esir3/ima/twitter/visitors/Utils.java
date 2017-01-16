@@ -13,13 +13,14 @@ public class Utils {
 	
 	public  String iterateonChem(Noeud noeud,Arc arc,String arg){
 		String res ="//debut itération"+noeud+"\n";
-		VisitorJava visitor = new VisitorJava();
+		VisitorJava visitor = new VisitorJava(arg);
 //		res+= visitor.visite(noeud, arg);
 //		noeud = this.getNodChem(noeud, arc.getCouleur());
 		while(noeud != null){
-			res+= visitor.visite(noeud, arg);
+			res+= noeud.acceptVisitor(visitor);
 			noeud = this.getNodChem(noeud, arc.getCouleur()); 
 		}
+		res+="String req_"+arc.getCouleur()+" = LibTw.getTwittes("+arg+");\n";
 		return res;
 		
 	}
