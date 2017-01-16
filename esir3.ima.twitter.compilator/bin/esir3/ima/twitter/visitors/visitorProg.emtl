@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
   <mtl:Module name="visitorProg" nsURI="esir3::ima::twitter::visitors::visitorProg" startHeaderPosition="29" endHeaderPosition="84">
-    <input/>
+    <input>
+      <takesTypesFrom href="http://www.example.org/imaModel2#/"/>
+    </input>
     <ownedModuleElement xsi:type="mtl:Query" name="visite" visibility="Public">
       <parameter name="anOclAny">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
@@ -110,7 +112,7 @@
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/visite">
       <details key="start" value="88"/>
-      <details key="end" value="192"/>
+      <details key="end" value="190"/>
       <details key="line" value="4"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/visite/anOclAny">
@@ -119,8 +121,8 @@
       <details key="line" value="4"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/visite/%">
-      <details key="start" value="140"/>
-      <details key="end" value="188"/>
+      <details key="start" value="139"/>
+      <details key="end" value="187"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/visite/%/self">
@@ -129,18 +131,18 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/visite/%/%">
-      <details key="start" value="147"/>
-      <details key="end" value="163"/>
+      <details key="start" value="146"/>
+      <details key="end" value="162"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/visite/%/%.1">
-      <details key="start" value="165"/>
-      <details key="end" value="175"/>
+      <details key="start" value="164"/>
+      <details key="end" value="174"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/visite/%/%.2">
-      <details key="start" value="177"/>
-      <details key="end" value="187"/>
+      <details key="start" value="176"/>
+      <details key="end" value="186"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

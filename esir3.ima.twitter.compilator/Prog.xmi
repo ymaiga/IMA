@@ -3,33 +3,40 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:imaModel2="http://www.example.org/imaModel2"
-    xsi:schemaLocation="http://www.example.org/imaModel2 imaModel2.ecore">
+    xmlns:imaModel2="http://www.example.org/imaModel2">
   <noeuds xsi:type="imaModel2:User"
-      arcSortants="//@chemin.1 //@chemin.0"
-      name="Ali"/>
+      name="Ali">
+    <arcSortants
+        next="newHashtag"
+        id="0"/>
+  </noeuds>
   <noeuds xsi:type="imaModel2:Localisation"
-      arcSortants="//@chemin.2"
-      name="France"/>
+      name="newHashtag">
+    <arcSortants
+        next="//@noeuds.6"
+        id="0"/>
+  </noeuds>
+  <noeuds xsi:type="imaModel2:Hashtag"
+      name="ESIR">
+    <arcSortants
+        couleur="1"
+        next="//@noeuds.4"
+        id="1"/>
+  </noeuds>
   <noeuds xsi:type="imaModel2:Print"/>
-  <noeuds xsi:type="imaModel2:Hashtag"
-      name="Toto"/>
-  <noeuds xsi:type="imaModel2:Positif"/>
+  <noeuds xsi:type="imaModel2:Positif">
+    <arcSortants
+        couleur="1"
+        next="//@noeuds.3"
+        id="1"/>
+  </noeuds>
+  <noeuds xsi:type="imaModel2:Plot"/>
   <noeuds xsi:type="imaModel2:Condition"
-      operator=">50"
-      if="//@noeuds.4"
-      else="//@noeuds.2"/>
+      operator=">20"
+      if="//@noeuds.5"
+      else="//@noeuds.3"/>
   <noeuds xsi:type="imaModel2:Hashtag"
-      name="Ilyass"/>
-  <noeuds xsi:type="imaModel2:Hashtag"
-      name="AliMohamed"/>
+      name="newHashtag2"/>
   <init filtre="Ali"/>
-  <chemin next="//@noeuds.2"
-      id="ali_print"/>
-  <chemin couleur="1"
-      next="France"
-      id="Ali_France"/>
-  <chemin couleur="1"
-      next="//@noeuds.2"
-      id="France_Print"/>
+  <init filtre="ESIR"/>
 </imaModel2:Prog>

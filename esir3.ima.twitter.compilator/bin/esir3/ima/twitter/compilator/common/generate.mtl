@@ -7,7 +7,7 @@
 [comment @main/]
 [file ('MainClass.java', false, 'UTF-8')]
 public class MainClass{
-	[prog.visite()/]
+	
 	public static void main(String['[]'/] args){
 	 [for (deb : Init | prog._init)]
 	 	[let filtre : Filtre = deb.filtre]

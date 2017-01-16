@@ -17,7 +17,7 @@ public class Utils {
 //		res+= visitor.visite(noeud, arg);
 //		noeud = this.getNodChem(noeud, arc.getCouleur());
 		while(noeud != null){
-			res+= noeud.acceptVisiteur(visitor); //visitor.visite(noeud, arg);
+			res+= visitor.visite(noeud, arg);
 			noeud = this.getNodChem(noeud, arc.getCouleur()); 
 		}
 		return res;

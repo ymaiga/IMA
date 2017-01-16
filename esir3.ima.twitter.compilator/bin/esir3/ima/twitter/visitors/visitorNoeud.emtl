@@ -4,7 +4,9 @@
     <input>
       <takesTypesFrom href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
     </input>
-    <input/>
+    <input>
+      <takesTypesFrom href="http://www.example.org/imaModel2#/"/>
+    </input>
     <ownedModuleElement xsi:type="mtl:Comment">
       <body startPosition="138" endPosition="197" value="[import esir3::ima::twitter::compilator::common::generate/]"/>
     </ownedModuleElement>
@@ -12,26 +14,26 @@
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;visitorNoeudProg&#xA;&#x9;&#xA;"/>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
       <parameter name="aProg">
-        <eAnnotations source="MTL">
-          <details key="type" value="Prog"/>
-        </eAnnotations>
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Prog"/>
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="visitNoeud" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;Abs Noeud !!!!"/>
       <parameter name="arg">
-        <eAnnotations source="MTL">
-          <details key="type" value="Noeud"/>
-        </eAnnotations>
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Noeud"/>
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="visitNoeud" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
-      <body xsi:type="mtl:TemplateExpression"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="arg" referredVariable="/0/visitNoeud.1/arg">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Filtre"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/imaModel2#//Filtre/name"/>
+      </body>
       <parameter name="arg">
-        <eAnnotations source="MTL">
-          <details key="type" value="Filtre"/>
-        </eAnnotations>
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Filtre"/>
       </parameter>
     </ownedModuleElement>
   </mtl:Module>
@@ -62,7 +64,7 @@
         <eAnnotations source="MTL" references="/0/visitorNoeudProg"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aProg">
-          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Prog"/>
         </eParameters>
       </eOperations>
       <eOperations name="visitNoeud">
@@ -72,7 +74,17 @@
         <eAnnotations source="MTL" references="/0/visitNoeud"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg">
-          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Noeud"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="visitNoeud">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/visitNoeud.1"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="arg">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Filtre"/>
         </eParameters>
       </eOperations>
     </eClassifiers>
@@ -96,30 +108,60 @@
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
       </eAnnotations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="imaModel2_Prog_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/imaModel2#//Prog"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="imaModel2_Noeud_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/imaModel2#//Noeud"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="imaModel2_Filtre_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/imaModel2#//Filtre"/>
+      </eAnnotations>
+    </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Prog"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Prog"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Noeud"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Noeud"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Filtre"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Filtre"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Filtre"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -176,11 +218,16 @@
       <details key="line" value="17"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/visitNoeud.1/%.1">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+      <details key="start" value="456"/>
+      <details key="end" value="464"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.11" references="/0/visitNoeud.1/arg">
+    <eAnnotations source="positions.11" references="/0/visitNoeud.1/%.1/arg">
+      <details key="start" value="456"/>
+      <details key="end" value="459"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/visitNoeud.1/arg">
       <details key="start" value="439"/>
       <details key="end" value="451"/>
       <details key="line" value="16"/>
