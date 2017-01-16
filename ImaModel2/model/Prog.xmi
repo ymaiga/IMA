@@ -5,8 +5,6 @@
   <noeuds xsi:type="imaModel2:Print"/>
   <noeuds xsi:type="imaModel2:Positif"/>
   <noeuds xsi:type="imaModel2:Condition" operator=">50" if="//@noeuds.3" else="//@noeuds.2"/>
-  <noeuds xsi:type="imaModel2:Hashtag" name="newHashtagdfvdfgvx"/>
-  <noeuds xsi:type="imaModel2:Localisation" name="newUser"/>
   <init filtre="Ali"/>
   <chemin next="//@noeuds.2" id="ali_print"/>
   <chemin couleur="1" next="//@noeuds.4" id="France_Condition"/>
