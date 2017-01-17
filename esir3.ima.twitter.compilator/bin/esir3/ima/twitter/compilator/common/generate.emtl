@@ -7,9 +7,9 @@
     <input>
       <takesTypesFrom href="http://www.example.org/imaModel2#/"/>
     </input>
-    <imports href="platform:/resource/esir3.ima.twitter.compilator/bin/esir3/ima/twitter/visitors/visitorNoeud.emtl#/0"/>
-    <imports href="platform:/resource/esir3.ima.twitter.compilator/bin/esir3/ima/twitter/visitors/visitorProg.emtl#/0"/>
-    <imports href="platform:/resource/esir3.ima.twitter.compilator/bin/esir3/ima/twitter/visitors/utils.emtl#/0"/>
+    <imports href="../../visitors/visitorNoeud.emtl#/0"/>
+    <imports href="../../visitors/visitorProg.emtl#/0"/>
+    <imports href="../../visitors/utils.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateElement" visibility="Public" main="true">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="public class MainClass{&#xA;&#x9;&#xA;&#x9;public static void main(String"/>
@@ -31,7 +31,7 @@
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = new ArryList&lt;String>();&#xA;&#x9;&#x9;&#x9;&#x9;"/>
               <body xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="platform:/resource/esir3.ima.twitter.compilator/bin/esir3/ima/twitter/visitors/utils.emtl#/0/iterateonChem"/>
+                <definition href="../../visitors/utils.emtl#/0/iterateonChem"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="filtre" referredVariable="/0/generateElement/%/%.3/%/filtre">
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/imaModel2#//Filtre"/>
                 </argument>
@@ -142,7 +142,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/esir3.ima.twitter.compilator/bin/esir3/ima/twitter/visitors/utils.emtl#/0/iterateonChem"/>
+          <references href="../../visitors/utils.emtl#/0/iterateonChem"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">

@@ -200,8 +200,6 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="imaModel2.Arc" referenceName="arcSortants">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="couleur" valueExpression="0"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="0"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="next"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -258,7 +256,7 @@
             <targetViewVariable name="targetView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="imaModel2.Arc" referenceName="next">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="imaModel2.Noeud" referenceName="next">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:target"/>
                 </subModelOperations>
               </firstModelOperations>
