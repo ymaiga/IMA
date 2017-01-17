@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:imaModel2="http://www.example.org/imaModel2" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.example.org/imaModel2 platform:/resource/ImaModel2/model/imaModel2.ecore http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_wQBl8NvTEeapsPZe6mZtow" selectedViews="_xAv4QNvTEeapsPZe6mZtow" version="11.1.0.201608251200">
+    <semanticResources>platform:/resource/ImaModel2/model/Prog.xmi</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_xAv4QNvTEeapsPZe6mZtow">
+      <viewpoint xmi:type="description:Viewpoint" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_xA1-4NvTEeapsPZe6mZtow" name="Prog" representation="_xA1-4dvTEeapsPZe6mZtow">
+        <description xmi:type="description_1:DiagramDescription" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']"/>
+        <target xmi:type="imaModel2:Prog" href="platform:/resource/ImaModel2/model/Prog.xmi#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_xA1-4dvTEeapsPZe6mZtow" name="Prog">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_xA1-4tvTEeapsPZe6mZtow" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_xA1-49vTEeapsPZe6mZtow"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_xA2l8NvTEeapsPZe6mZtow" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_xA2l8dvTEeapsPZe6mZtow" type="Sirius" element="_xA1-4dvTEeapsPZe6mZtow" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_ztLCQNvTEeapsPZe6mZtow" type="2001" element="_ztCfYNvTEeapsPZe6mZtow">
+          <children xmi:type="notation:Node" xmi:id="_ztLCQ9vTEeapsPZe6mZtow" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_ztLCRNvTEeapsPZe6mZtow" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ztOFktvTEeapsPZe6mZtow" type="3003" element="_ztDtgNvTEeapsPZe6mZtow">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ztOFk9vTEeapsPZe6mZtow" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ztOFlNvTEeapsPZe6mZtow"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ztLCQdvTEeapsPZe6mZtow" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ztLCQtvTEeapsPZe6mZtow" width="100" height="70"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ztLpUNvTEeapsPZe6mZtow" type="2001" element="_ztEUkNvTEeapsPZe6mZtow">
+          <children xmi:type="notation:Node" xmi:id="_ztMQYNvTEeapsPZe6mZtow" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_ztMQYdvTEeapsPZe6mZtow" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ztOsoNvTEeapsPZe6mZtow" type="3003" element="_ztE7oNvTEeapsPZe6mZtow">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ztOsodvTEeapsPZe6mZtow" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ztOsotvTEeapsPZe6mZtow"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ztLpUdvTEeapsPZe6mZtow" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ztLpUtvTEeapsPZe6mZtow" x="160" width="100" height="70"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ztMQYtvTEeapsPZe6mZtow" type="2001" element="_ztGJwNvTEeapsPZe6mZtow">
+          <children xmi:type="notation:Node" xmi:id="_ztM3cNvTEeapsPZe6mZtow" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_ztM3cdvTEeapsPZe6mZtow" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ztPTsNvTEeapsPZe6mZtow" type="3017" element="_ztGJwdvTEeapsPZe6mZtow">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ztPTsdvTEeapsPZe6mZtow" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ztPTstvTEeapsPZe6mZtow"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ztMQY9vTEeapsPZe6mZtow" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ztMQZNvTEeapsPZe6mZtow" x="320" width="120" height="120"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ztM3ctvTEeapsPZe6mZtow" type="2001" element="_ztGw0NvTEeapsPZe6mZtow">
+          <children xmi:type="notation:Node" xmi:id="_ztNegNvTEeapsPZe6mZtow" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_ztNegdvTEeapsPZe6mZtow" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ztPTs9vTEeapsPZe6mZtow" type="3003" element="_ztHX4NvTEeapsPZe6mZtow">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ztPTtNvTEeapsPZe6mZtow" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ztPTtdvTEeapsPZe6mZtow"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ztM3c9vTEeapsPZe6mZtow" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ztM3dNvTEeapsPZe6mZtow" x="500" width="100" height="70"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ztNegtvTEeapsPZe6mZtow" type="2001" element="_ztH-8NvTEeapsPZe6mZtow">
+          <children xmi:type="notation:Node" xmi:id="_ztOFkNvTEeapsPZe6mZtow" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_ztOFkdvTEeapsPZe6mZtow" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ztP6wNvTEeapsPZe6mZtow" type="3003" element="_ztImANvTEeapsPZe6mZtow">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ztP6wdvTEeapsPZe6mZtow" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ztP6wtvTEeapsPZe6mZtow"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ztNeg9vTEeapsPZe6mZtow" fontColor="789660" fontName="Segoe UI" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ztNehNvTEeapsPZe6mZtow" x="660" width="100" height="70"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_xA2l8tvTEeapsPZe6mZtow"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ztCfYNvTEeapsPZe6mZtow" name="#" width="10" height="7" resizeKind="NSEW">
+      <target xmi:type="imaModel2:Hashtag" href="platform:/resource/ImaModel2/model/Prog.xmi#//@noeuds.5"/>
+      <semanticElements xmi:type="imaModel2:Hashtag" href="platform:/resource/ImaModel2/model/Prog.xmi#//@noeuds.5"/>
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_ztDtgNvTEeapsPZe6mZtow" labelSize="12" showIcon="false" labelPosition="node" width="10" height="7" color="209,209,209">
+        <description xmi:type="style:SquareDescription" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ztEUkNvTEeapsPZe6mZtow" name="#" width="10" height="7" resizeKind="NSEW">
+      <target xmi:type="imaModel2:Localisation" href="platform:/resource/ImaModel2/model/Prog.xmi#//@noeuds.0"/>
+      <semanticElements xmi:type="imaModel2:Localisation" href="platform:/resource/ImaModel2/model/Prog.xmi#//@noeuds.0"/>
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_ztE7oNvTEeapsPZe6mZtow" labelSize="12" showIcon="false" labelPosition="node" width="10" height="7" color="217,196,215">
+        <description xmi:type="style:SquareDescription" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ztGJwNvTEeapsPZe6mZtow" width="12" height="12" resizeKind="NSEW">
+      <target xmi:type="imaModel2:Condition" href="platform:/resource/ImaModel2/model/Prog.xmi#//@noeuds.1"/>
+      <semanticElements xmi:type="imaModel2:Condition" href="platform:/resource/ImaModel2/model/Prog.xmi#//@noeuds.1"/>
+      <ownedStyle xmi:type="diagram:Lozenge" xmi:id="_ztGJwdvTEeapsPZe6mZtow" labelSize="12" labelPosition="node" color="252,175,62">
+        <description xmi:type="style:LozengeNodeDescription" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Condition']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Condition']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ztGw0NvTEeapsPZe6mZtow" name="@" width="10" height="7" resizeKind="NSEW">
+      <target xmi:type="imaModel2:User" href="platform:/resource/ImaModel2/model/Prog.xmi#//@noeuds.4"/>
+      <semanticElements xmi:type="imaModel2:User" href="platform:/resource/ImaModel2/model/Prog.xmi#//@noeuds.4"/>
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_ztHX4NvTEeapsPZe6mZtow" labelSize="12" showIcon="false" labelPosition="node" width="10" height="7" color="204,242,166">
+        <description xmi:type="style:SquareDescription" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ztH-8NvTEeapsPZe6mZtow" name="Print" width="10" height="7" resizeKind="NSEW">
+      <target xmi:type="imaModel2:Print" href="platform:/resource/ImaModel2/model/Prog.xmi#//@noeuds.3"/>
+      <semanticElements xmi:type="imaModel2:Print" href="platform:/resource/ImaModel2/model/Prog.xmi#//@noeuds.3"/>
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_ztImANvTEeapsPZe6mZtow" labelSize="12" showIcon="false" labelColor="156,12,12" borderSize="3" borderSizeComputationExpression="3" borderLineStyle="dash_dot" labelPosition="node" width="10" height="7" color="194,239,255">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:SquareDescription" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Print']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Print']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_xA1-5NvTEeapsPZe6mZtow"/>
+    <activatedLayers xmi:type="description_1:Layer" href="description/myproject.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer"/>
+    <target xmi:type="imaModel2:Prog" href="platform:/resource/ImaModel2/model/Prog.xmi#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

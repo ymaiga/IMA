@@ -4,8 +4,8 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Prog" initialisation="true" domainClass="imaModel2.Prog" enablePopupBars="true">
       <metamodel href="http://www.example.org/imaModel2#/"/>
       <defaultLayer name="Prog">
-        <nodeMappings name="Hashtag" domainClass="imaModel2.Hashtag">
-          <borderedNodeMappings name="ArcSortant" semanticCandidatesExpression="feature:arcSortants" domainClass="imaModel2.Arc">
+        <nodeMappings name="Hashtag" labelDirectEdit="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" domainClass="imaModel2.Hashtag">
+          <borderedNodeMappings name="ArcSortant" deletionDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@toolSections.1/@ownedTools[name='unsetFilter']" semanticCandidatesExpression="feature:arcSortants" domainClass="imaModel2.Arc">
             <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="feature:couleur" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -18,8 +18,8 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Localisation" domainClass="imaModel2.Localisation">
-          <borderedNodeMappings name="ArcSortant" semanticCandidatesExpression="feature:arcSortants" domainClass="imaModel2.Arc">
+        <nodeMappings name="Localisation" labelDirectEdit="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" domainClass="imaModel2.Localisation">
+          <borderedNodeMappings name="ArcSortant" deletionDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@toolSections.1/@ownedTools[name='unsetFilter']" semanticCandidatesExpression="feature:arcSortants" domainClass="imaModel2.Arc">
             <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="feature:couleur" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -32,15 +32,15 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Condition" domainClass="imaModel2.Condition">
+        <nodeMappings name="Condition" labelDirectEdit="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@toolSections.0/@ownedTools[name='editOperatorCondition']" domainClass="imaModel2.Condition">
           <style xsi:type="style:LozengeNodeDescription" labelSize="12" labelExpression="feature:operator" sizeComputationExpression="12" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="User" domainClass="imaModel2.User">
-          <borderedNodeMappings name="ArcSortant" semanticCandidatesExpression="feature:arcSortants" domainClass="imaModel2.Arc">
+        <nodeMappings name="User" labelDirectEdit="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" domainClass="imaModel2.User">
+          <borderedNodeMappings name="ArcSortant" deletionDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@toolSections.1/@ownedTools[name='unsetFilter']" semanticCandidatesExpression="feature:arcSortants" domainClass="imaModel2.Arc">
             <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="feature:couleur" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -109,7 +109,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="Arc" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']/@borderedNodeMappings[name='ArcSortant'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation']/@borderedNodeMappings[name='ArcSortant'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User']/@borderedNodeMappings[name='ArcSortant']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Condition'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='PrintT'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Plot'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='PositifT']" targetFinderExpression="feature:next">
+        <edgeMappings name="Arc" deletionDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@toolSections.1/@ownedTools[name='unsetFilter']" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']/@borderedNodeMappings[name='ArcSortant'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation']/@borderedNodeMappings[name='ArcSortant'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User']/@borderedNodeMappings[name='ArcSortant']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Condition'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='PrintT'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Plot'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='PositifT']" targetFinderExpression="feature:next">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -134,6 +134,32 @@
           </style>
         </edgeMappings>
         <toolSections name="Edit">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="editName">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="editOperatorCondition">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="operator" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Delete">
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetFilter" forceRefresh="true">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="filtre"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Create">
           <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Hashtag" label="New Hashtag" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -173,8 +199,8 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="imaModel2.Arc" referenceName="arcSortants">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="setCouleur" valueExpression="0"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="seId" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="couleur" valueExpression="0"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="0"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="next"/>
                 </subModelOperations>
               </firstModelOperations>
@@ -231,7 +257,7 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="imaModel2.Arc" referenceName="next">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:target"/>
                 </subModelOperations>
