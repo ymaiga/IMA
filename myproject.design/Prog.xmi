@@ -6,8 +6,6 @@
   </noeuds>
   <noeuds xsi:type="imaModel2:Localisation" name="France">
     <arcSortants couleur="1" next="//@noeuds.6" id="1"/>
-    <arcSortants/>
-    <arcSortants/>
   </noeuds>
   <noeuds xsi:type="imaModel2:Hashtag" name="ESIR">
     <arcSortants couleur="3" next="//@noeuds.4" id="3"/>
@@ -25,6 +23,4 @@
     <arcSortants couleur="3" next="ESIR" id="3"/>
     <arcSortants next="Ali"/>
   </noeuds>
-  <noeuds xsi:type="imaModel2:AVG_Like"/>
-  <noeuds xsi:type="imaModel2:Followers"/>
 </imaModel2:Prog>
