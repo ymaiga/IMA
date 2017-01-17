@@ -174,8 +174,8 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="imaModel2.Arc" referenceName="arcSortants">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="setCouleur" valueExpression="0"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="seId" valueExpression="var:target"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="next"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="seId" valueExpression="0"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="next" valueExpression="var:target"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
