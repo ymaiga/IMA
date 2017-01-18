@@ -4,20 +4,17 @@
     <arcSortants next="newHashtag" id="0"/>
   </noeuds>
   <noeuds xsi:type="imaModel2:Localisation" name="newHashtag">
-    <arcSortants next="//@noeuds.6" id="0"/>
+    <arcSortants next="//@noeuds.5" id="0"/>
+    <arcSortants/>
     <arcSortants/>
     <arcSortants/>
   </noeuds>
   <noeuds xsi:type="imaModel2:Hashtag" name="ESIR">
-    <arcSortants couleur="1" next="//@noeuds.4" id="1"/>
+    <arcSortants couleur="1" id="1"/>
+    <arcSortants next="newHashtag"/>
+    <arcSortants/>
   </noeuds>
   <noeuds xsi:type="imaModel2:Print"/>
-  <noeuds xsi:type="imaModel2:Positif">
-    <arcSortants couleur="1" next="//@noeuds.3" id="1"/>
-  </noeuds>
   <noeuds xsi:type="imaModel2:Plot"/>
-  <noeuds xsi:type="imaModel2:Condition" operator=">20" if="//@noeuds.5" else="//@noeuds.3"/>
-  <noeuds xsi:type="imaModel2:Hashtag" name="newHashtag2"/>
-  <init filtre="Ali"/>
-  <init filtre="ESIR"/>
+  <noeuds xsi:type="imaModel2:Condition" operator=">20" if="//@noeuds.4" else="//@noeuds.3"/>
 </imaModel2:Prog>
