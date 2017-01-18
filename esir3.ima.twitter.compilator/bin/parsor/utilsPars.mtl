@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module utilsPars('http://www.example.org/imaModel2')/]
+
+[query public notCycle(arg0 : Prog) : Boolean
+	= invoke('parsor.UtilsPars', 'notCycle(imaModel2.Prog)', Sequence{arg0})
+/]
+
+[query public textException(anOclAny: OclAny) : String
+	= invoke('parsor.UtilsPars', 'textException()', Sequence{})
+/]
+
