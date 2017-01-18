@@ -23,7 +23,7 @@ public String visite(Filtre f){
  
  public String visite(Print p){
 	 String res = "LibTw.getTwittes("+args+")";
-	return "LibTw.print("+res+");\n"; 
+	return "System.out.println("+res+");\n"; 
  }
  
  public String visite(Plot p){
