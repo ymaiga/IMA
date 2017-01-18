@@ -15,13 +15,19 @@ public class Utils {
 		String res ="//debut parcours du chemin"+arc.getCouleur()+" (id = "+arc.getId()+")\n";
 		VisitorJava visitor = new VisitorJava(arg);
 		int num = arc.getCouleur();
-//		res+= visitor.visite(noeud, arg);
-//		noeud = this.getNodChem(noeud, arc.getCouleur());
+		Noeud n_prec = noeud;
 		while(noeud != null){
-			res+= noeud.acceptVisitor(visitor);
-			noeud = this.getNodChem(noeud, num); 
+			Noeud n_suiv = this.getNodChem(noeud, num); 
+			if(noeud instanceof Condition){
+				res+=visitor.visite((Condition)noeud,n_prec);
+			}
+			else {
+				res+= noeud.acceptVisitor(visitor);
+			}
+			 n_prec = noeud;
+			noeud = n_suiv;
 		}
-		res+="String req_"+arc.getCouleur()+" = LibTw.getTwittes("+arg+");\n";
+		res+="List<String> req_"+arc.getCouleur()+" = LibTw.getTwittes("+arg+");\n";
 		return res;
 		
 	}

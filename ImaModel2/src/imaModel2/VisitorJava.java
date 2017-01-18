@@ -57,4 +57,24 @@ public String visite(Filtre f){
 	return res;
  }
  
+ public String visite(Condition cnd, Noeud n){
+	 String strcnd = getCondition(n);
+	 String res = "if ("+strcnd+" "+cnd.getOperator()+"){\n";
+	 res+=cnd.getIf().acceptVisitor(this)+"}\n else{\n"+cnd.getElse().acceptVisitor(this)+"}\n";
+	return res;
+ }
+
+private String getCondition(Noeud n) {
+	String res = "";
+	if(n instanceof Filtre){
+		res = "LibTw.count("+args+")";
+	}
+	else {
+		String tmp = n.acceptVisitor(this);
+		int ind = res.lastIndexOf(";");
+		res = tmp.substring(0, ind);
+	}
+	return res;
+}
+ 
 }

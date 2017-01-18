@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="esir3.ima.twitter.compilator">
-    <property name="ECLIPSE_HOME" value="../../../../Soft/eclipse-neon"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../workspaceModel"/>
+    <property name="ECLIPSE_HOME" value="../../../../Desktop/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../runtime-serius_config"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="esir3.ima.twitter.compilator.libraryclasspath">
         <pathelement location="${ECLIPSE_WORKSPACE}/esir3.ima.twitter.compilator/bin"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.12.0.v20160606-1342.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/javax.inject_1.0.0.v20091030.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.11.2.v20161107-1947.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.11.1.v20160708-1632.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi.compatibility.state_1.0.200.v20160504-1419.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.8.0.v20160509-1230.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.8.0.v20160509-0411.jar"/>
@@ -16,12 +16,12 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.6.1.v20160815-1406.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.5.100.v20160418-1621.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.3.400.v20150715-1528.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.uml_5.2.2.v20161114-0827.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.uml_5.2.1.v20160822-0739.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.12.0.v20160420-0247.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.12.0.v20160420-0247.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.12.0.v20160420-0247.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.common_2.1.0.v20161114-0827.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.types_2.0.0.v20161114-0827.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.common_2.1.0.v20160822-0739.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.types_2.0.0.v20160822-0739.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mapping.ecore2xml_2.9.0.v20160526-0356.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl_3.6.0.v20160523-1914.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>

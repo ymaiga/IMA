@@ -6,13 +6,13 @@ public class MainClass{
 		//debut parcours du chemin0 (id = 0)
 		args_0.add(Ali);
 		args_0.add(newHashtag);
-		if ( LibTw.getTwittes(args_0)>20){
+		if (LibTw.count(args_0) >20){
 			LibTw.plot(LibTw.getTwittes(args_0));
 		}
 		else{
 			LibTw.print(LibTw.getTwittes(args_0));
 		}
-		String req_0 = LibTw.getTwittes(args_0);
+		List<String> req_0 = LibTw.getTwittes(args_0);
 
 
 		List<String> args_1 = new ArryList<String>();
@@ -20,7 +20,7 @@ public class MainClass{
 		args_1.add(ESIR);
 		LibTw.positifTw(LibTw.getTwittes(args_1));
 		LibTw.print(LibTw.getTwittes(args_1));
-		String req_1 = LibTw.getTwittes(args_1);
+		List<String> req_1 = LibTw.getTwittes(args_1);
 
 
 	}
