@@ -6,7 +6,6 @@
   <noeuds xsi:type="imaModel2:Localisation" name="newHashtag">
     <arcSortants next="//@noeuds.6" id="0"/>
     <arcSortants/>
-    <arcSortants/>
   </noeuds>
   <noeuds xsi:type="imaModel2:Hashtag" name="ESIR">
     <arcSortants couleur="1" next="//@noeuds.4" id="1"/>
@@ -17,7 +16,6 @@
   </noeuds>
   <noeuds xsi:type="imaModel2:Plot"/>
   <noeuds xsi:type="imaModel2:Condition" operator=">20" if="//@noeuds.5" else="//@noeuds.3"/>
-  <noeuds xsi:type="imaModel2:Hashtag" name="newHashtag2"/>
   <init filtre="Ali"/>
   <init filtre="ESIR"/>
 </imaModel2:Prog>
