@@ -7,9 +7,10 @@ public class Test {
 		return "";
 	}
 
-	public static void main(String[] args) throws IMATweetException {
-		// TODO Auto-generated method stub
-		System.out.println((new Test()).test());
-	}
+//	public static void main(String[] args) throws IMATweetException {
+//		// TODO Auto-generated method stub
+//		System.out.println((new Test()).test());
+//	}
+	
 
 }

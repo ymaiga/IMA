@@ -10,7 +10,19 @@ private String args;
 }
 
 public String visite(Filtre f){
-	return args+".add("+f.getName()+");\n"; 
+	return args+".add(\""+f.getName()+"\");\n"; 
+ }
+
+public String visite(Hashtag h){
+	return args+".add(\"#"+h.getName()+"\");\n"; 
+ }
+
+public String visite(User u){
+	return args+".add(\"@"+u.getName()+"\");\n"; 
+ }
+
+public String visite(Localisation l){
+	return args+".add(\"!"+l.getName()+"\");\n"; 
  }
  
  public String visite(Action a){
