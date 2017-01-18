@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <imaModel2:Prog xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:imaModel2="http://www.example.org/imaModel2">
   <noeuds xsi:type="imaModel2:User" name="Ali">
-    <arcSortants couleur="1" next="France" id="1"/>
-    <arcSortants next="newHashtag3" id="0"/>
+    <arcSortants next="newHashtag" id="0"/>
   </noeuds>
-  <noeuds xsi:type="imaModel2:Localisation" name="France">
-    <arcSortants couleur="1" next="//@noeuds.6" id="1"/>
+  <noeuds xsi:type="imaModel2:Localisation" name="newHashtag">
+    <arcSortants next="//@noeuds.6" id="0"/>
   </noeuds>
   <noeuds xsi:type="imaModel2:Hashtag" name="ESIR">
-    <arcSortants couleur="3" next="//@noeuds.4" id="3"/>
+    <arcSortants couleur="1" next="//@noeuds.4" id="1"/>
   </noeuds>
   <noeuds xsi:type="imaModel2:Print"/>
   <noeuds xsi:type="imaModel2:Positif">
-    <arcSortants couleur="1" next="//@noeuds.3" id="1"/>
+    <arcSortants couleur="1" next="//@noeuds.7"/>
   </noeuds>
   <noeuds xsi:type="imaModel2:Plot"/>
   <noeuds xsi:type="imaModel2:Condition" operator=">20" if="//@noeuds.5" else="//@noeuds.3"/>
-  <noeuds xsi:type="imaModel2:Hashtag" name="newHashtag3">
-    <arcSortants next="//@noeuds.3" id="1111"/>
+  <noeuds xsi:type="imaModel2:Condition" operator=">=100" if="//@noeuds.3" else="//@noeuds.8"/>
+  <noeuds xsi:type="imaModel2:Followers">
+    <arcSortants couleur="1" next="//@noeuds.3"/>
   </noeuds>
-  <noeuds xsi:type="imaModel2:User" name="Toto">
-    <arcSortants couleur="3" next="ESIR" id="3"/>
-    <arcSortants next="Ali"/>
-  </noeuds>
+  <init filtre="Ali"/>
+  <init filtre="ESIR"/>
 </imaModel2:Prog>

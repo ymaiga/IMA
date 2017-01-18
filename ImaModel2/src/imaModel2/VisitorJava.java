@@ -71,8 +71,11 @@ private String getCondition(Noeud n) {
 	}
 	else {
 		String tmp = n.acceptVisitor(this);
-		int ind = res.lastIndexOf(";");
-		res = tmp.substring(0, ind);
+		int ind = tmp.lastIndexOf(";");
+		if(ind >=0){
+			res = tmp.substring(0, ind);
+		}
+		else res =tmp;
 	}
 	return res;
 }
