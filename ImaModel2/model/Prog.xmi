@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <imaModel2:Prog xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:imaModel2="http://www.example.org/imaModel2">
+  <noeuds xsi:type="imaModel2:Hashtag" name="France"/>
   <noeuds xsi:type="imaModel2:User" name="Ali">
-    <arcSortants next="Esir"/>
+    <arcSortants next="France"/>
   </noeuds>
-  <noeuds xsi:type="imaModel2:Hashtag" name="Esir">
-    <arcSortants next="//@noeuds.2"/>
-  </noeuds>
+  <noeuds xsi:type="imaModel2:Localisation" name="Rennes"/>
   <noeuds xsi:type="imaModel2:Print"/>
-  <noeuds xsi:type="imaModel2:Hashtag" name="Maroc">
-    <arcSortants couleur="1" next="France"/>
-  </noeuds>
-  <noeuds xsi:type="imaModel2:Localisation" name="France">
-    <arcSortants couleur="1" next="//@noeuds.7"/>
-  </noeuds>
-  <noeuds xsi:type="imaModel2:Positif">
-    <arcSortants couleur="1" next="//@noeuds.2"/>
-  </noeuds>
-  <noeuds xsi:type="imaModel2:AVG_Like">
-    <arcSortants couleur="1" next="//@noeuds.2"/>
-  </noeuds>
-  <noeuds xsi:type="imaModel2:Condition" operator=">20" if="//@noeuds.5" else="//@noeuds.6"/>
-  <noeuds xsi:type="imaModel2:User" name="ali">
-    <arcSortants next="FSAC"/>
-  </noeuds>
-  <noeuds xsi:type="imaModel2:Hashtag" name="FSAC">
-    <arcSortants next="//@noeuds.10"/>
-  </noeuds>
-  <noeuds xsi:type="imaModel2:Positif">
-    <arcSortants next="//@noeuds.11"/>
-  </noeuds>
-  <noeuds xsi:type="imaModel2:Condition" operator=">100" if="//@noeuds.12" else="//@noeuds.13"/>
-  <noeuds xsi:type="imaModel2:Print"/>
-  <noeuds xsi:type="imaModel2:AVG_Like"/>
   <init filtre="Ali"/>
-  <init filtre="Maroc"/>
-  <init filtre="ali"/>
 </imaModel2:Prog>
