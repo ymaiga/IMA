@@ -10,14 +10,6 @@ import com.google.code.geocoder.model.GeocodeResponse;
 import com.google.code.geocoder.model.GeocoderRequest;
 import com.google.code.geocoder.model.GeocoderResult;
 
-import edu.stanford.nlp.ling.CoreAnnotations;
-import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations;
-import edu.stanford.nlp.pipeline.Annotation;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import edu.stanford.nlp.sentiment.SentimentCoreAnnotations.SentimentAnnotatedTree;
-import edu.stanford.nlp.sentiment.SentimentCoreAnnotations.SentimentClass;
-import edu.stanford.nlp.trees.Tree;
-import edu.stanford.nlp.util.CoreMap;
 import twitter4j.GeoLocation;
 import twitter4j.Query;
 import twitter4j.QueryResult;
@@ -30,12 +22,10 @@ public class LibTw implements LibTwI {
 
 	private static final boolean DEBUG = false;
 	private Twitter twitter;
-	private StanfordCoreNLP pipeline;
 
 	public LibTw() {
-		twitter = new TwitterFactory().getInstance();		
+		twitter = new TwitterFactory().getInstance();
 	}
-	
 
 	public int getPropPositif(List<String> params) {
 		// return tweetsSuperieurSeuil(params,100,).size();
@@ -45,23 +35,21 @@ public class LibTw implements LibTwI {
 	public int getPropNegatif(List<String> params) {
 		return 0;
 	}
-	
-	
-	
+
 	public int count(List<String> requete) {
 		int counter = 0;
 		Query query = createQuery(requete);
 		QueryResult result = null;
-		
+
 		do {
 			try {
 				result = twitter.search(query);
 			} catch (TwitterException e) {
 				e.printStackTrace();
 			}
-			counter += result.getCount();			
+			counter += result.getCount();
 		} while ((query = result.nextQuery()) != null);
-		if(DEBUG){
+		if (DEBUG) {
 			System.out.println(counter);
 		}
 		return counter;
@@ -70,7 +58,7 @@ public class LibTw implements LibTwI {
 	public List<String> getTweets(List<String> requete) {
 
 		List<String> tweetsResult = new ArrayList<String>();
-		
+
 		Query query = createQuery(requete);
 
 		QueryResult result = null;
@@ -83,14 +71,24 @@ public class LibTw implements LibTwI {
 			}
 			List<Status> tweets = result.getTweets();
 			int i = 0;
+
 			for (Status tweet : tweets) {
-				if(DEBUG){
-					i++;
-					System.out.println(i + " :=> @" + tweet.getUser().getScreenName() + " - " + tweet.getText());
+				if (DEBUG) {
+					// System.out.println(tweet.toString());
+					// i++;
+					// System.out.println(i + " :=> @" +
+					// tweet.getUser().getScreenName() + " - " +
+					// tweet.getText());
 				}
-				tweetsResult.add(tweet.getText());
+
+				tweetsResult.add(new TweetIma(tweet.getCreatedAt(), tweet.getText()).toString());
+
 			}
 		} while ((query = result.nextQuery()) != null);
+		
+		if (DEBUG) {
+			System.out.println(tweetsResult.toString());
+		}
 
 		return tweetsResult;
 	}
@@ -99,7 +97,10 @@ public class LibTw implements LibTwI {
 	private GeoLocation getLocation(String adresse) {
 
 		final Geocoder geocoder = new Geocoder();
-
+		// Paris par défault
+		float latitude = 48.85f;
+		float longitude = 2.35f;
+		
 		// on créé une requête geoCoder
 		GeocoderRequest geocoderRequest = new GeocoderRequestBuilder().setAddress(adresse).getGeocoderRequest();
 		GeocodeResponse geocoderResponse = null;
@@ -110,43 +111,47 @@ public class LibTw implements LibTwI {
 		}
 		// resulte
 		List<GeocoderResult> geoCoderResults = geocoderResponse.getResults();
-		float latitude = geoCoderResults.get(0).getGeometry().getLocation().getLat().floatValue();
-		float longitude = geoCoderResults.get(0).getGeometry().getLocation().getLng().floatValue();
+		if(geoCoderResults.size() > 0){
+			latitude = geoCoderResults.get(0).getGeometry().getLocation().getLat().floatValue();
+			longitude = geoCoderResults.get(0).getGeometry().getLocation().getLng().floatValue();
+		}
+
 		return new GeoLocation(latitude, longitude);
 
 	}
 
-	public int findSentiment(String tweet) {
-		int mainSentiment = 0;
-		int longest = 0;
+	// public int findSentiment(String tweet) {
+	// int mainSentiment = 0;
+	// int longest = 0;
+	//
+	// StanfordCoreNLP pipeline = new StanfordCoreNLP("MyPropFile.properties");
+	// if (tweet != null && tweet.length() > 0) {
+	// Annotation annotation = pipeline.process(tweet);
+	// System.out.println(annotation.toString());
+	//
+	// for (CoreMap sentence :
+	// annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
+	// System.out.println(sentence.get(SentimentClass.class));
+	// }
+	//
+	// for (CoreMap sentence :
+	// annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
+	// Tree tree = sentence.get(SentimentAnnotatedTree.class);
+	//
+	// int sentiment = RNNCoreAnnotations.getPredictedClass(tree);
+	// String partText = sentence.toString();
+	// if (partText.length() > longest) {
+	// mainSentiment = sentiment;
+	// longest = partText.length();
+	// }
+	// }
+	// }
+	//
+	// return mainSentiment;
+	//
+	// }
 
-		StanfordCoreNLP pipeline = new StanfordCoreNLP("MyPropFile.properties");
-		if (tweet != null && tweet.length() > 0) {
-			Annotation annotation = pipeline.process(tweet);
-			System.out.println(annotation.toString());
-
-			for (CoreMap sentence : annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
-				System.out.println(sentence.get(SentimentClass.class));
-			}
-
-			// for (CoreMap sentence :
-			// annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
-			// Tree tree = sentence.get(SentimentAnnotatedTree.class);
-			//
-			// int sentiment = RNNCoreAnnotations.getPredictedClass(tree);
-			// String partText = sentence.toString();
-			// if (partText.length() > longest) {
-			// mainSentiment = sentiment;
-			// longest = partText.length();
-			// }
-			// }
-		}
-
-		return mainSentiment;
-
-	}
-	
-	private Query createQuery(List<String> requete){
+	private Query createQuery(List<String> requete) {
 		StringBuilder owner = new StringBuilder();
 		boolean ownerFound = false;
 		List<String> referenceUser = new ArrayList<String>();
@@ -200,7 +205,7 @@ public class LibTw implements LibTwI {
 		}
 		query.setCount(1000);
 		return query;
-		
+
 	}
 
 }
