@@ -27,7 +27,7 @@ public class Utils {
 			 n_prec = noeud;
 			noeud = n_suiv;
 		}
-		res+="List<String> req_"+arc.getCouleur()+" = LibTw.getTwittes("+arg+");\n";
+		res+="List<String> req_"+arc.getCouleur()+" = libTw.getTweets("+arg+");\n";
 		return res;
 		
 	}
