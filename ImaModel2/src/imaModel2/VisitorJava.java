@@ -34,37 +34,37 @@ public String visite(Localisation l){
  }
  
  public String visite(Print p){
-	 String res = "LibTw.getTwittes("+args+")";
+	 String res = "libTw.getTweets("+args+")";
 	return "System.out.println("+res+");\n"; 
  }
  
  public String visite(Plot p){
-	 String res = "LibTw.getTwittes("+args+")";
-	return "LibTw.plot("+res+");\n"; 
+	 String res = "libTw.getTweets("+args+")";
+	return "libTw.plot("+res+");\n"; 
  }
  
  public String visite(AVG_Like avg){
-	 String res = "LibTw.getTwittes("+args+")";
-	return "LibTw.avgLike("+res+");\n"; 
+	 String res = "libTw.getTweets("+args+")";
+	return "libTw.avgLike("+res+");\n"; 
  }
  
  public String visite(Negatif neg){
-	 String res = "LibTw.getTwittes("+args+")";
-	return "LibTw.negatifTw("+res+");\n"; 
+	 String res = "libTw.getTweets("+args+")";
+	return "libTw.negatifTw("+res+");\n"; 
  }
  
  public String visite(Positif pos){
-	 String res = "LibTw.getTwittes("+args+")";
-	return "LibTw.positifTw("+res+");\n"; 
+	 String res = "libTw.getTweets("+args+")";
+	return "libTw.positifTw("+res+");\n"; 
  }
  
  public String visite(Followers fl){
-	 String res = "LibTw.getTwittes("+args+")";
-	return "LibTw.nbFollowers("+res+");\n"; 
+	 String res = "libTw.getTweets("+args+")";
+	return "libTw.nbFollowers("+res+");\n"; 
  }
  
  public String visite(Condition cnd){
-	 String res = "if ( LibTw.getTwittes("+args+")"+cnd.getOperator()+"){\n";
+	 String res = "if ( libTw.getTweets("+args+")"+cnd.getOperator()+"){\n";
 	 res+=cnd.getIf().acceptVisitor(this)+"}\n else{\n"+cnd.getElse().acceptVisitor(this)+"}\n";
 	return res;
  }
@@ -79,7 +79,7 @@ public String visite(Localisation l){
 private String getCondition(Noeud n) {
 	String res = "";
 	if(n instanceof Filtre){
-		res = "LibTw.count("+args+")";
+		res = "libTw.count("+args+")";
 	}
 	else {
 		String tmp = n.acceptVisitor(this);

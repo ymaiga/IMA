@@ -16,6 +16,7 @@ import esir3.ima.LibTw;
 public class MainClass{
 
 	public static void main(String['[]'/] args){
+	LibTw libTw = new LibTw();
 	 [for (deb : Init | prog._init)]
 	 	[let filtre : Filtre = deb.filtre]
 	 		[for (arc : Arc | filtre.arcSortants)]
