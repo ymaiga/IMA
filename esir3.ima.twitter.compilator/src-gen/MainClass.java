@@ -6,6 +6,7 @@ import esir3.ima.LibTw;
 public class MainClass{
 
 	public static void main(String[] args){
+
 		LibTw libTw = new LibTw();
 
 		List<String> args_0 = new ArrayList<String>();
@@ -33,7 +34,7 @@ public class MainClass{
 		}
 		List<String> req_1 = libTw.getTweets(args_1);
 
-
+	
 	}
 
 }

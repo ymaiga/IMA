@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <imaModel2:Prog xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:imaModel2="http://www.example.org/imaModel2">
-  <noeuds xsi:type="imaModel2:Hashtag" name="France"/>
-  <noeuds xsi:type="imaModel2:User" name="Ali">
-    <arcSortants next="France"/>
+  <noeuds xsi:type="imaModel2:Hashtag" name="UsaElections">
+    <arcSortants next="//@noeuds.2"/>
   </noeuds>
-  <noeuds xsi:type="imaModel2:Localisation" name="Rennes"/>
+  <noeuds xsi:type="imaModel2:User" name="Toto">
+    <arcSortants next="UsaElections"/>
+    <arcSortants couleur="1" next="//@noeuds.4"/>
+  </noeuds>
   <noeuds xsi:type="imaModel2:Print"/>
-  <init filtre="Ali"/>
+  <noeuds xsi:type="imaModel2:Followers"/>
+  <noeuds xsi:type="imaModel2:Condition" operator=">50" if="France" else="//@noeuds.3"/>
+  <noeuds xsi:type="imaModel2:Localisation" name="France">
+    <arcSortants couleur="1" next="//@noeuds.2"/>
+  </noeuds>
+  <init filtre="Toto"/>
 </imaModel2:Prog>
