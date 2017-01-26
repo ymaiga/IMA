@@ -2,6 +2,7 @@ package esir3.im.libs;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.code.geocoder.Geocoder;
@@ -11,6 +12,7 @@ import com.google.code.geocoder.model.GeocoderRequest;
 import com.google.code.geocoder.model.GeocoderResult;
 
 import twitter4j.GeoLocation;
+import twitter4j.Paging;
 import twitter4j.Query;
 import twitter4j.QueryResult;
 import twitter4j.Status;
@@ -20,49 +22,139 @@ import twitter4j.TwitterFactory;
 
 public class LibTw implements LibTwI {
 
-	private static final boolean DEBUG = false;
+	private static final boolean DEBUG = true;
 	private Twitter twitter;
+	private Dictionnaire dico;
 
 	public LibTw() {
 		twitter = new TwitterFactory().getInstance();
-	}
-
-	public int getPropPositif(List<String> params) {
-		// return tweetsSuperieurSeuil(params,100,).size();
-		return 0;
-	}
-
-	public int getPropNegatif(List<String> params) {
-		return 0;
+		// dico = new Dictionnaire();
 	}
 
 	public int count(List<String> requete) {
-		int counter = 0;
-		Query query = createQuery(requete);
-		QueryResult result = null;
-
-		do {
-			try {
-				result = twitter.search(query);
-			} catch (TwitterException e) {
-				e.printStackTrace();
-			}
-			counter += result.getCount();
-		} while ((query = result.nextQuery()) != null);
-		if (DEBUG) {
-			System.out.println(counter);
-		}
-		return counter;
+		return getTweets(requete).size();
 	}
 
-	public List<String> getTweets(List<String> requete) {
+	public List<TweetIma> getTweets(List<String> requete) {
 
-		List<String> tweetsResult = new ArrayList<String>();
+		StringBuilder owner = new StringBuilder();
+		List<String> filtres = new ArrayList<String>();
+		List<String> localisations = new ArrayList<String>();
+		List<TweetIma> tweetsResult = new ArrayList<TweetIma>();
 
-		Query query = createQuery(requete);
+		boolean userTimeLineRequest = false;
+		for (String param : requete) {
+			char typeParam = param.trim().charAt(0);
 
+			// le owner est le premier @ que l'on croise, les autres @ sont des
+			// filtres
+			if (typeParam == '@' && !userTimeLineRequest) {
+				owner.append(param.substring(1).trim());
+				userTimeLineRequest = true;
+			} else if (typeParam == '!') {
+				localisations.add(param.substring(1).trim());
+			} else {
+				filtres.add(param.trim());
+			}
+		}
+
+		if (userTimeLineRequest) {
+			tweetsResult = requestUserTimeLine(owner.toString().trim(), filtres, localisations);
+		} else {
+			tweetsResult = tweetSearch(filtres, localisations);
+		}
+
+		if (DEBUG) {
+			System.out.println("DEBUG : ");
+			for (TweetIma tweet : tweetsResult) {
+				System.out.println(tweet);
+			}
+		}
+		return tweetsResult;
+	}
+
+	private List<TweetIma> requestUserTimeLine(String owner, List<String> filtre, List<String> localisations) {
+
+		List<TweetIma> tweetsResult = new ArrayList<TweetIma>();
+
+		List<Status> statuses = null;
+		try {
+			statuses = twitter.getUserTimeline(owner, new Paging(1, 200));
+		} catch (TwitterException e) {
+			e.printStackTrace();
+		}
+
+		GeoLocation geo = null;
+		// si il y a une adresse
+		if (!localisations.isEmpty()) {
+			geo = getLocation(localisations.get(0));
+		}
+
+		// si il y a des tweets
+		if (statuses != null) {
+			// si il y a des filtres
+			if (!filtre.isEmpty()) {
+				for (Status tweet : statuses) {
+					// pour chaque tweet on verifie que tout les filtres sont
+					// dans le tweet
+					if (!AllFiltrePresentInTweet(filtre, tweet.getText())) {
+						statuses.remove(tweet);
+					}
+				}
+			}
+			// si on a un filtre de localisation
+			if (geo != null) {
+				for (Status tweet : statuses) {
+					// si la localisation est mauvaise
+					if (tweet.getGeoLocation() != null && !tweet.getGeoLocation().equals(geo)) {
+						statuses.remove(tweet);
+					}
+				}
+			}
+		}
+		for (Status tweet : statuses) {
+			TweetIma tweetIma = new TweetIma(tweet.getCreatedAt(), tweet.getText());
+			tweetsResult.add(tweetIma);
+		}
+
+		return tweetsResult;
+	}
+
+	private boolean AllFiltrePresentInTweet(List<String> filtres, String tweetText) {
+		boolean allFiltrePresent = true;
+		for (String filtre : filtres) {
+			if (!tweetText.contains(filtre)) {
+				allFiltrePresent = false;
+				break;
+			}
+		}
+		return allFiltrePresent;
+	}
+
+	private List<TweetIma> tweetSearch(List<String> filtres, List<String> localisations) {
+
+		// creation de la query
+		List<TweetIma> tweetsResult = new ArrayList<TweetIma>();
+
+		StringBuilder twitterQuery = new StringBuilder();
+
+		// ajout des filtres
+		for (String filtre : filtres) {
+			twitterQuery.append(filtre).append(" ");
+		}
+
+		// creation de la requête
+		Query query = new Query(twitterQuery.toString().trim());
+
+		// pour chaque localisation
+		for (String adresse : localisations) {
+			// on cherche les coordonnées
+			GeoLocation geo = getLocation(adresse);
+			// on complète la query
+			query.geoCode(geo, 62, "mi");
+		}
+		query.setCount(1000);
 		QueryResult result = null;
-
 		do {
 			try {
 				result = twitter.search(query);
@@ -70,25 +162,11 @@ public class LibTw implements LibTwI {
 				e.printStackTrace();
 			}
 			List<Status> tweets = result.getTweets();
-			int i = 0;
-
 			for (Status tweet : tweets) {
-				if (DEBUG) {
-					// System.out.println(tweet.toString());
-					// i++;
-					// System.out.println(i + " :=> @" +
-					// tweet.getUser().getScreenName() + " - " +
-					// tweet.getText());
-				}
-
-				tweetsResult.add(new TweetIma(tweet.getCreatedAt(), tweet.getText()).toString());
-
+				TweetIma tweetIma = new TweetIma(tweet.getCreatedAt(), tweet.getText());
+				tweetsResult.add(tweetIma);
 			}
 		} while ((query = result.nextQuery()) != null);
-		
-		if (DEBUG) {
-			System.out.println(tweetsResult.toString());
-		}
 
 		return tweetsResult;
 	}
@@ -100,7 +178,7 @@ public class LibTw implements LibTwI {
 		// Paris par défault
 		float latitude = 48.85f;
 		float longitude = 2.35f;
-		
+
 		// on créé une requête geoCoder
 		GeocoderRequest geocoderRequest = new GeocoderRequestBuilder().setAddress(adresse).getGeocoderRequest();
 		GeocodeResponse geocoderResponse = null;
@@ -111,7 +189,7 @@ public class LibTw implements LibTwI {
 		}
 		// resulte
 		List<GeocoderResult> geoCoderResults = geocoderResponse.getResults();
-		if(geoCoderResults.size() > 0){
+		if (geoCoderResults.size() > 0) {
 			latitude = geoCoderResults.get(0).getGeometry().getLocation().getLat().floatValue();
 			longitude = geoCoderResults.get(0).getGeometry().getLocation().getLng().floatValue();
 		}
@@ -120,11 +198,37 @@ public class LibTw implements LibTwI {
 
 	}
 
+	public int dicoSearch(String tweet) {
+		int score = 0;
+
+		// diviser le tweet en mots
+		List<String> wordsList = new ArrayList<String>(Arrays.asList(tweet.split(" ")));
+		// List<String> wordsListFiltered = dico.filter(wordsList);
+
+		return score;
+	}
+
+	public int getPropPositif(List<String> params) {
+		// return tweetsSuperieurSeuil(params,100,).size();
+		return 0;
+	}
+
+	public int getPropNegatif(List<String> params) {
+		return 0;
+	}
 	// public int findSentiment(String tweet) {
 	// int mainSentiment = 0;
 	// int longest = 0;
 	//
+	// //StanfordCoreNLP pipeline = new StanfordCoreNLP(
+	// PropertiesUtils.asProperties( "annotators", "tokenize, ssplit, parse,
+	// sentiment", "tokenize.language", "fr", "pos.model",
+	// "edu/stanford/nlp/models/pos-tagger/french/french.tagger", "parse.model",
+	// "edu/stanford/nlp/models/lexparser/frenchFactored.ser.gz",
+	// "depparse.model", "edu/stanford/nlp/models/parser/nndep/UD_French.gz"));
 	// StanfordCoreNLP pipeline = new StanfordCoreNLP("MyPropFile.properties");
+	// //StanfordCoreNLP pipeline = new
+	// StanfordCoreNLP("StanfordCoreNLP-french.properties");
 	// if (tweet != null && tweet.length() > 0) {
 	// Annotation annotation = pipeline.process(tweet);
 	// System.out.println(annotation.toString());
@@ -150,62 +254,4 @@ public class LibTw implements LibTwI {
 	// return mainSentiment;
 	//
 	// }
-
-	private Query createQuery(List<String> requete) {
-		StringBuilder owner = new StringBuilder();
-		boolean ownerFound = false;
-		List<String> referenceUser = new ArrayList<String>();
-		List<String> hashtag = new ArrayList<String>();
-		List<String> localisation = new ArrayList<String>();
-
-		// on divise la liste de parametre entre les filtres, les references des
-		// utilisateur et le proprietaire du tweet
-		for (String param : requete) {
-			char typeParam = param.trim().charAt(0);
-			// si on est sur un @
-			if (typeParam == '@') {
-				// le premier @ represente le owner du tweet
-				if (!ownerFound) {
-					ownerFound = true;
-					owner.append(param);
-				} else {
-					// les autres @ sont des references d'autre utilisateurs
-					referenceUser.add(param.substring(1));
-				}
-			} else if (typeParam == '#') {
-				hashtag.add(param);
-			} else if (typeParam == '!') {
-				localisation.add(param);
-			}
-		}
-
-		// creation de la query
-		StringBuilder twitterQuery = new StringBuilder();
-		// ajout du owner
-		if (ownerFound) {
-			twitterQuery.append(owner.toString()).append(" ");
-		}
-		// ajout des hashtags
-		for (String tag : hashtag) {
-			twitterQuery.append(tag).append(" ");
-		}
-		// ajout des references sur les users
-		for (String reference : referenceUser) {
-			twitterQuery.append(reference).append(" ");
-		}
-		// creation de la requête
-		Query query = new Query(twitterQuery.toString());
-
-		// pour chaque localisation
-		for (String adresse : localisation) {
-			// on cherche les coordonnées
-			GeoLocation geo = getLocation(adresse);
-			// on complète la query
-			query.geoCode(geo, 62, "mi");
-		}
-		query.setCount(1000);
-		return query;
-
-	}
-
 }

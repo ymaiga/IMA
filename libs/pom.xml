@@ -34,13 +34,6 @@
 			<version>0.16</version>
 			<type>jar</type>
 		</dependency>
-		<!-- <dependency> <groupId>edu.stanford.nlp</groupId> <artifactId>stanford-corenlp</artifactId> 
-			<version>3.6.0</version> </dependency> <dependency> <groupId>edu.stanford.nlp</groupId> 
-			<artifactId>stanford-corenlp</artifactId> <version>3.6.0</version> <classifier>models-french</classifier> 
-			</dependency> <dependency> <groupId>edu.stanford.nlp</groupId> <artifactId>stanford-corenlp</artifactId> 
-			<version>3.6.0</version> <classifier>models-english</classifier> </dependency> 
-			<dependency> <groupId>edu.stanford.nlp</groupId> <artifactId>stanford-parser</artifactId> 
-			<version>3.6.0</version> </dependency> -->
 	</dependencies>
 	<build>
 		<plugins>

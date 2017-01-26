@@ -9,7 +9,7 @@ public interface LibTwI {
 	 * @param params 
 	 * @return liste de tweets
 	 */
-	public List<String> getTweets(List<String> requete);
+	public List<TweetIma> getTweets(List<String> requete);
 	
 
 	/**
