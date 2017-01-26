@@ -61,15 +61,15 @@ public class Dictionnaire {
 		}
 	}
 	
-	public ArrayList<String> filter(ArrayList<String> wordsList){
-		ArrayList<String> filtered = new ArrayList<String>();
-		
-		for(String word : wordsList){
-			if(!this.stopWords.contains(word.trim().toLowerCase()){
-				filtered.add(word);
-			}
-		}
-		return filtered;
-	}
+//	public ArrayList<String> filter(ArrayList<String> wordsList){
+//		ArrayList<String> filtered = new ArrayList<String>();
+//		
+//		for(String word : wordsList){
+//			if(!this.stopWords.contains(word.trim().toLowerCase()){
+//				filtered.add(word);
+//			}
+//		}
+//		return filtered;
+//	}
 
 }

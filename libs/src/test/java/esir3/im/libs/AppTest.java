@@ -43,19 +43,26 @@ public class AppTest extends TestCase {
 		assertTrue(true);
 	}
 
-	public void testGetTweets() {
-		params.add("@corentinHcd");
-
-		listTweets = myLibTw.getTweets(params);
-		assert (listTweets != null);
-	}
-
-//	public void testGetCount() {
-//		int count = 0;
-//		params.add("#Rennes");
-//		params.add("!Rennes");
-//		count = myLibTw.count(params);
-//		assert (count > 0);
+//	public void testGetTweets() {
+//		params.add("@corentinHcd");
+//		listTweets = myLibTw.getTweets(params);
+//		assert (listTweets != null);
 //	}
+
+	public void testGetCount() {
+		int count = 0;
+		params.add("#Gauche");
+		params.add("!Rennes");
+		count = myLibTw.count(params);
+		assert (count > 0);
+	}
+	
+	
+	public void testplot(){
+		params.add("#Gauche");
+		params.add("!Rennes");
+		myLibTw.plot(params);
+		
+	}
 
 }

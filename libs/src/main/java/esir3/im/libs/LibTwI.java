@@ -7,9 +7,19 @@ public interface LibTwI {
 	/**
 	 * Retourne les tweets d'une requête
 	 * @param params 
-	 * @return liste de tweets
+	 * @return liste de tweetsIma
 	 */
-	public List<TweetIma> getTweets(List<String> requete);
+	public List<TweetIma> getTweetsIma(List<String> requete);
+	
+	/**
+	 * Retourne les tweets d'une requête 
+	 * @param params 
+	 * @return liste de tweets string
+	 */
+	public String getTweets(List<String> requete);
+	
+	
+	public String plot(List<String> requete);
 	
 
 	/**

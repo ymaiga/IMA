@@ -1,6 +1,7 @@
 package esir3.im.libs;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +23,7 @@ import twitter4j.TwitterFactory;
 
 public class LibTw implements LibTwI {
 
-	private static final boolean DEBUG = true;
+	private static final boolean DEBUG = false;
 	private Twitter twitter;
 	private Dictionnaire dico;
 
@@ -32,10 +33,26 @@ public class LibTw implements LibTwI {
 	}
 
 	public int count(List<String> requete) {
-		return getTweets(requete).size();
+		return getTweetsIma(requete).size();
+	}
+	
+	public String getTweets(List<String> requete) {
+		return getTweetsIma(requete).toString();
 	}
 
-	public List<TweetIma> getTweets(List<String> requete) {
+	public String plot(List<String> requete) {
+		List<String> res = new ArrayList<String>();
+		 List<TweetIma> list = getTweetsIma(requete);
+		 for(TweetIma ima : list){
+			 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		     String formattedDate = formatter.format(ima.getDate());
+		     System.out.println(formattedDate);
+			 res.add(formattedDate);
+		 }
+		return res.toString();
+	}
+
+	public List<TweetIma> getTweetsIma(List<String> requete) {
 
 		StringBuilder owner = new StringBuilder();
 		List<String> filtres = new ArrayList<String>();
@@ -81,9 +98,8 @@ public class LibTw implements LibTwI {
 		try {
 			statuses = twitter.getUserTimeline(owner, new Paging(1, 200));
 		} catch (TwitterException e) {
-			e.printStackTrace();
-		}
 
+		}
 		GeoLocation geo = null;
 		// si il y a une adresse
 		if (!localisations.isEmpty()) {
@@ -111,10 +127,10 @@ public class LibTw implements LibTwI {
 					}
 				}
 			}
-		}
-		for (Status tweet : statuses) {
-			TweetIma tweetIma = new TweetIma(tweet.getCreatedAt(), tweet.getText());
-			tweetsResult.add(tweetIma);
+			for (Status tweet : statuses) {
+				TweetIma tweetIma = new TweetIma(tweet.getCreatedAt(), tweet.getText());
+				tweetsResult.add(tweetIma);
+			}
 		}
 
 		return tweetsResult;
@@ -216,42 +232,6 @@ public class LibTw implements LibTwI {
 	public int getPropNegatif(List<String> params) {
 		return 0;
 	}
-	// public int findSentiment(String tweet) {
-	// int mainSentiment = 0;
-	// int longest = 0;
-	//
-	// //StanfordCoreNLP pipeline = new StanfordCoreNLP(
-	// PropertiesUtils.asProperties( "annotators", "tokenize, ssplit, parse,
-	// sentiment", "tokenize.language", "fr", "pos.model",
-	// "edu/stanford/nlp/models/pos-tagger/french/french.tagger", "parse.model",
-	// "edu/stanford/nlp/models/lexparser/frenchFactored.ser.gz",
-	// "depparse.model", "edu/stanford/nlp/models/parser/nndep/UD_French.gz"));
-	// StanfordCoreNLP pipeline = new StanfordCoreNLP("MyPropFile.properties");
-	// //StanfordCoreNLP pipeline = new
-	// StanfordCoreNLP("StanfordCoreNLP-french.properties");
-	// if (tweet != null && tweet.length() > 0) {
-	// Annotation annotation = pipeline.process(tweet);
-	// System.out.println(annotation.toString());
-	//
-	// for (CoreMap sentence :
-	// annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
-	// System.out.println(sentence.get(SentimentClass.class));
-	// }
-	//
-	// for (CoreMap sentence :
-	// annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
-	// Tree tree = sentence.get(SentimentAnnotatedTree.class);
-	//
-	// int sentiment = RNNCoreAnnotations.getPredictedClass(tree);
-	// String partText = sentence.toString();
-	// if (partText.length() > longest) {
-	// mainSentiment = sentiment;
-	// longest = partText.length();
-	// }
-	// }
-	// }
-	//
-	// return mainSentiment;
-	//
-	// }
+
+
 }
