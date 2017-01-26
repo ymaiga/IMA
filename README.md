@@ -41,8 +41,12 @@ Il faut au préalable avoir eclipse modeling et s'assurer sur que les packages A
  - myproject.desing
  - esir3.ima.twitter.compilator 
  
+ Pour compiler le projet, il faut renseigner les champs suivants dans run configurations: 
  
+ ![](./images/runConfigurations.jpg)
 
+Model : Choisir le fichier xmi 
+Target: Chemin du répértoire où on veut génerer le code JAVA
 
 # Technologies utilisées 
 
