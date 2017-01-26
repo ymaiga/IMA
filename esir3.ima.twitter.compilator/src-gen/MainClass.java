@@ -13,7 +13,7 @@ public class MainClass{
 		args_0.add("@Ali");
 		args_0.add("!newHashtag");
 		if (libTw.count(args_0) >20){
-			libTw.plot(libTw.getTweets(args_0));
+			libTw.plot(args_0);
 		}
 		else{
 			System.out.println(libTw.getTweets(args_0));

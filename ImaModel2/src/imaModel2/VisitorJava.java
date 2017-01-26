@@ -39,8 +39,7 @@ public String visite(Localisation l){
  }
  
  public String visite(Plot p){
-	 String res = "libTw.getTweets("+args+")";
-	return "libTw.plot("+res+");\n"; 
+	return "libTw.plot("+args+");\n"; 
  }
  
  public String visite(AVG_Like avg){
