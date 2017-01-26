@@ -36,10 +36,34 @@ Il faut au préalable avoir eclipse modeling et s'assurer que les packages Accel
   
  - Toujours dans eclipse, faire un clic droit sur le projet et faire : run as > Eclipse Application 
  
- Une nouvelle instance d'eclipse se lance. Dans cette nouvelle instance, il faut importer les projets : 
+ Une nouvelle instance d'eclipse se lance. Dans cette nouvelle instance, il faut importer les projets suivants dans la nouvelle instance d'eclipse :
  
  - myproject.desing
  - esir3.ima.twitter.compilator 
+ 
+ Il faut aussi le importer le projet lib (qui est de type maven). 
+ Avant de lancer la génération de code, il faut specifier ses clés developpeurs en argument avant d'executer les codes générés comme ceci : 
+ 
+ ```
+ -Dtwitter4j.debug=true 
+ -Dtwitter4j.oauth.consumerKey=
+ -Dtwitter4j.oauth.consumerSecret=
+ -Dtwitter4j.oauth.accessToken=
+ -Dtwitter4j.oauth.accessTokenSecret=
+ ```
+ 
+ Afin d'utiliser les commandes plot qui utilise R, il faut au préalable avoir R installé sur son poste, ajouter le package "Rserve" et lancer une instance de la librairie commme suit :
+ 
+ ```R
+install.package("Rserve")
+
+library("Rserve")
+
+# Lancer une instance du serveur Rserve afin que le code Java on puisse appélé les fonctions R 
+
+Rserve()
+
+ ```
  
  Pour compiler le projet, il faut renseigner les champs suivants dans run configurations: 
  
@@ -53,4 +77,5 @@ Il faut au préalable avoir eclipse modeling et s'assurer que les packages Accel
   - Sirius, Acceleo, Java, Twitter4J, RServe
 
 # TODO
+- Implementer la commande followers 
 - Enrichir la liste des commandes de stats sur les tweets
