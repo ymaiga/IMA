@@ -49,9 +49,46 @@ public class LibTw implements LibTwI {
 		for (TweetIma ima : list) {
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 			String formattedDate = formatter.format(ima.getDate());
-			res.add(formattedDate);
+			//			res.add(formattedDate);
+
+			res.add(getDay(ima.getDate().getDay()));
 		}
+
+		PlotIma.plot(res);
 		return res.toString();
+	}
+
+	private String getDay(int day) {
+
+		String res = "";
+		switch (day) {
+		case 0:
+			res = "7.Dimanche";
+			break;
+		case 1:
+			res = "1.Lundi";
+			break;
+		case 2:
+			res = "2.Mardi";
+			break;
+		case 3:
+			res = "3.Mercredi";
+			break;
+		case 4:
+			res = "4.Jeudi";
+			break;
+		case 5:
+			res = "5.Vendredi";
+			break;
+		case 6:
+			res = "6.Samedi";
+			break;
+
+		default:
+			break;
+		}
+		
+		return res;
 	}
 
 	// recupere les tweets sous forme de list d'objet TweetIma

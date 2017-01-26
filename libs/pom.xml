@@ -34,6 +34,13 @@
 			<version>0.16</version>
 			<type>jar</type>
 		</dependency>
+
+		<dependency>
+			<groupId>org.rosuda.REngine</groupId>
+			<artifactId>Rserve</artifactId>
+			<version>1.8.1</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
