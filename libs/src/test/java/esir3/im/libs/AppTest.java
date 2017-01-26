@@ -43,11 +43,11 @@ public class AppTest extends TestCase {
 		assertTrue(true);
 	}
 
-//	public void testGetTweets() {
-//		params.add("@corentinHcd");
-//		listTweets = myLibTw.getTweets(params);
-//		assert (listTweets != null);
-//	}
+	public void testGetTweets() {
+		params.add("@corentinHcd");
+		listTweets = myLibTw.getTweetsIma(params);
+		assert (listTweets != null);
+	}
 
 	public void testGetCount() {
 		int count = 0;
@@ -61,8 +61,24 @@ public class AppTest extends TestCase {
 	public void testplot(){
 		params.add("#Gauche");
 		params.add("!Rennes");
-		myLibTw.plot(params);
-		
+		myLibTw.plot(params);		
+	}
+	
+	public void testTweetGetScore() {
+		String testNeutre = "Je suis heureux et triste à la fois";
+		String testPositif = "Je suis heureux";
+		String testSuperPositif = "Je suis heureux et genereux";
+		String testNegatif = "Je suis triste";
+		System.out.println("'"+testNeutre +"' --> SCORE = "+ myLibTw.tweetGetScore(testNeutre));
+		System.out.println("'"+testPositif +"' --> SCORE = "+ myLibTw.tweetGetScore(testPositif));
+		System.out.println("'"+testSuperPositif +"' --> SCORE = "+ myLibTw.tweetGetScore(testSuperPositif));
+		System.out.println("'"+testNegatif +"' --> SCORE = "+ myLibTw.tweetGetScore(testNegatif));
+	}
+	
+	public void testGetPropNegatif(){
+		params.add("#Gauche");
+		params.add("!Rennes");
+		myLibTw.getPropPositif(params);
 	}
 
 }

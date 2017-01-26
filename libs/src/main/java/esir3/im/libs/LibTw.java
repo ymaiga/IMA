@@ -29,29 +29,32 @@ public class LibTw implements LibTwI {
 
 	public LibTw() {
 		twitter = new TwitterFactory().getInstance();
-		// dico = new Dictionnaire();
+		dico = new Dictionnaire();
 	}
 
+	// renvoi le nombre de tweet
 	public int count(List<String> requete) {
 		return getTweetsIma(requete).size();
 	}
-	
+
+	// renvoie les tweets sous forme de string
 	public String getTweets(List<String> requete) {
 		return getTweetsIma(requete).toString();
 	}
 
+	// renvoi une liste de date
 	public String plot(List<String> requete) {
 		List<String> res = new ArrayList<String>();
-		 List<TweetIma> list = getTweetsIma(requete);
-		 for(TweetIma ima : list){
-			 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		     String formattedDate = formatter.format(ima.getDate());
-		     System.out.println(formattedDate);
-			 res.add(formattedDate);
-		 }
+		List<TweetIma> list = getTweetsIma(requete);
+		for (TweetIma ima : list) {
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+			String formattedDate = formatter.format(ima.getDate());
+			res.add(formattedDate);
+		}
 		return res.toString();
 	}
 
+	// recupere les tweets sous forme de list d'objet TweetIma
 	public List<TweetIma> getTweetsIma(List<String> requete) {
 
 		StringBuilder owner = new StringBuilder();
@@ -90,6 +93,7 @@ public class LibTw implements LibTwI {
 		return tweetsResult;
 	}
 
+	// recupere la time line d'un utilisateur
 	private List<TweetIma> requestUserTimeLine(String owner, List<String> filtre, List<String> localisations) {
 
 		List<TweetIma> tweetsResult = new ArrayList<TweetIma>();
@@ -136,6 +140,7 @@ public class LibTw implements LibTwI {
 		return tweetsResult;
 	}
 
+	// Verifie que tout les filtres sont présent dans le tweet
 	private boolean AllFiltrePresentInTweet(List<String> filtres, String tweetText) {
 		boolean allFiltrePresent = true;
 		for (String filtre : filtres) {
@@ -147,6 +152,7 @@ public class LibTw implements LibTwI {
 		return allFiltrePresent;
 	}
 
+	// requête non timeLine
 	private List<TweetIma> tweetSearch(List<String> filtres, List<String> localisations) {
 
 		// creation de la query
@@ -214,24 +220,33 @@ public class LibTw implements LibTwI {
 
 	}
 
-	public int dicoSearch(String tweet) {
-		int score = 0;
-
+	public int tweetGetScore(String tweet) {
 		// diviser le tweet en mots
-		List<String> wordsList = new ArrayList<String>(Arrays.asList(tweet.split(" ")));
-		// List<String> wordsListFiltered = dico.filter(wordsList);
-
-		return score;
+		ArrayList<String> wordsList = new ArrayList<String>(Arrays.asList(tweet.split(" ")));
+		ArrayList<String> wordsListFiltered = dico.filter(wordsList);
+		return dico.getScore(wordsListFiltered);
 	}
 
 	public int getPropPositif(List<String> params) {
-		// return tweetsSuperieurSeuil(params,100,).size();
-		return 0;
+		int counter = 0;
+		List<TweetIma> tweets = getTweetsIma(params);
+		for (TweetIma tweet : tweets) {
+			if (tweetGetScore(tweet.getText()) > 0) {
+				counter++;
+			}
+		}
+		return counter;
 	}
 
 	public int getPropNegatif(List<String> params) {
-		return 0;
+		int counter = 0;
+		List<TweetIma> tweets = getTweetsIma(params);
+		for (TweetIma tweet : tweets) {
+			if (tweetGetScore(tweet.getText()) < 0) {
+				counter++;
+			}
+		}
+		return counter;
 	}
-
 
 }
