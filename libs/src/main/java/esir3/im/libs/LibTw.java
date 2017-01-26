@@ -53,6 +53,7 @@ public class LibTw implements LibTwI {
 
 			res.add(getDay(ima.getDate().getDay()));
 		}
+		
 
 		PlotIma.plot(res);
 		return res.toString();
@@ -60,31 +61,32 @@ public class LibTw implements LibTwI {
 
 	private String getDay(int day) {
 
-		String res = "";
+		String res = ""+day;
 		switch (day) {
 		case 0:
-			res = "7.Dimanche";
+			res+= ".Dimanche";
 			break;
 		case 1:
-			res = "1.Lundi";
+			res+= ".Lundi";
 			break;
 		case 2:
-			res = "2.Mardi";
+			res += ".Mardi";
 			break;
 		case 3:
-			res = "3.Mercredi";
+			res += ".Mercredi";
 			break;
 		case 4:
-			res = "4.Jeudi";
+			res += ".Jeudi";
 			break;
 		case 5:
-			res = "5.Vendredi";
+			res += ".Vendredi";
 			break;
 		case 6:
-			res = "6.Samedi";
+			res += ".Samedi";
 			break;
 
 		default:
+			res ="test "+day;
 			break;
 		}
 		
@@ -284,6 +286,11 @@ public class LibTw implements LibTwI {
 			}
 		}
 		return counter;
+	}
+
+	public int nbFollowers(List<String> requete) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
