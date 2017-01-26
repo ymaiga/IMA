@@ -5,10 +5,13 @@
   </noeuds>
   <noeuds xsi:type="imaModel2:User" name="Toto">
     <arcSortants next="UsaElections"/>
+    <arcSortants couleur="1" next="//@noeuds.4"/>
   </noeuds>
   <noeuds xsi:type="imaModel2:Print"/>
   <noeuds xsi:type="imaModel2:Followers"/>
   <noeuds xsi:type="imaModel2:Condition" operator=">50" if="France" else="//@noeuds.3"/>
-  <noeuds xsi:type="imaModel2:Localisation" name="France"/>
+  <noeuds xsi:type="imaModel2:Localisation" name="France">
+    <arcSortants couleur="1" next="//@noeuds.2"/>
+  </noeuds>
   <init filtre="Toto"/>
 </imaModel2:Prog>

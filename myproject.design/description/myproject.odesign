@@ -172,7 +172,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Arc_init" deletionDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@toolSections.1/@ownedTools[name='unsetFilter']" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='init']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']" targetFinderExpression="feature:filtre">
+        <edgeMappings name="Arc_init" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='init']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='User'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Localisation'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Prog']/@defaultLayer/@nodeMappings[name='Hashtag']" targetFinderExpression="feature:filtre">
           <style targetArrow="OutputClosedArrow" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
             <centerLabelStyleDescription>
