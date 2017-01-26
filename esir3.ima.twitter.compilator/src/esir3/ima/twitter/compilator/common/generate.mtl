@@ -8,9 +8,11 @@
 [comment @main/]
 [file ('MainClass.java', false, 'UTF-8')]
 [if (notDetectCycle(prog))]
+package esir3.im.libs;
+
 import java.util.List;
 import java.util.ArrayList;
-import esir3.ima.LibTw;
+
 
 
 public class MainClass{

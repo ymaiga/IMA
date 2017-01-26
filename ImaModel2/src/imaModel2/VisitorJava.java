@@ -49,17 +49,15 @@ public String visite(Localisation l){
  
  public String visite(Negatif neg){
 	 String res = "libTw.getTweets("+args+")";
-	return "libTw.negatifTw("+res+");\n"; 
+	return "libTw.getPropNegatif("+res+");\n"; 
  }
  
  public String visite(Positif pos){
-	 String res = "libTw.getTweets("+args+")";
-	return "libTw.positifTw("+res+");\n"; 
+	return "libTw.getPropPositif("+args+");\n"; 
  }
  
  public String visite(Followers fl){
-	 String res = "libTw.getTweets("+args+")";
-	return "libTw.nbFollowers("+res+");\n"; 
+	return "libTw.nbFollowers("+args+");\n"; 
  }
  
  public String visite(Condition cnd){
