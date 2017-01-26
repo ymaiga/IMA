@@ -19,7 +19,7 @@ A partir d'un métamodel Ecore de récupération et d'analyse de tweets que nous
 
 ![](./images/sample2.jpg)
 
-# Note Installation 
+# Note d'installation 
 
 Il faut au préalable avoir eclipse modeling et s'assurer sur que les packages Acceleo et Sirius sont présents.
 
@@ -46,6 +46,7 @@ Il faut au préalable avoir eclipse modeling et s'assurer sur que les packages A
 
 # Technologies utilisées 
 
+  - Sirius, Acceleo, Java, Twitter4J, RServe
+
 # TODO
-- Enrichir la liste des commandes
-- Améliorer l'interface gcient 
+- Enrichir la liste des commandes de stats sur les tweets
