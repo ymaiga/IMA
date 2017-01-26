@@ -10,8 +10,13 @@ A partir d'un métamodel Ecore de récupération et d'analyse de tweets que nous
 # Métamodèle 
 ![](./images/metamodel.jpg)
 
-# Exemples de programme 
+# Exemples de programme  
+- Recuperer tous les tweets de toto ayant #UsaLections et les afficher. 
+
 ![](./images/sample1.jpg)
+
+- Recupererd'une part tous les tweets de toto ayant #UsaLections et les afficher et d'autr,e parts si le nombre de tweets de Toto est supérieur à 50, filtrer ceux dans lesquels est mentionné France puis les afficher, sinon 
+
 ![](./images/sample2.jpg)
 
 # Note Installation 
