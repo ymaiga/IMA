@@ -12,19 +12,15 @@
 hs_err_pid*
 
 .classpath
-.project
 .settings
 
 ImaModel2.editor/.classpath
-ImaModel2.editor/.project
 ImaModel2.editor/.settings/
 
 ImaModel2.edit/.classpath
-ImaModel2.edit/.project
 ImaModel2.edit/.settings/
 
 ImaModel2.tests/.classpath
-ImaModel2.tests/.project
 ImaModel2.tests/.settings/
 
 esir3.ima.twitter.compilator/META-INF/
