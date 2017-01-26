@@ -43,7 +43,7 @@ Il faut au préalable avoir eclipse modeling et s'assurer sur que les packages A
  
  Pour compiler le projet, il faut renseigner les champs suivants dans run configurations: 
  
- ![](./images/runConfigurations.jpg)
+ ![](./images/runConfigurations.JPG)
 
 Model : Choisir le fichier xmi 
 Target: Chemin du répértoire où on veut génerer le code JAVA
