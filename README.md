@@ -45,8 +45,8 @@ Il faut au préalable avoir eclipse modeling et s'assurer sur que les packages A
  
  ![](./images/runConfigurations.JPG)
 
-Model : Choisir le fichier xmi 
-Target: Chemin du répértoire où on veut génerer le code JAVA
+  -Model : Choisir le fichier xmi 
+  -Target: Chemin du répértoire où on veut génerer le code JAVA
 
 # Technologies utilisées 
 
