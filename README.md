@@ -8,20 +8,41 @@ A partir d'un métamodel Ecore de récupération et d'analyse de tweets que nous
 - Un générateur de code qui génère du code java allant rechercher des tweets et des traitements à ces derniers selon les commandes du métamodèle.
 
 # Métamodèle 
-![](./images/metamodel.jpg)
+![](./images/MetaModel.jpg)
 
 # Exemples de programme  
 - Recuperer tous les tweets de toto ayant #UsaLections et les afficher. 
 
 ![](./images/sample1.jpg)
 
-- Recupererd'une part tous les tweets de toto ayant #UsaLections et les afficher et d'autr,e parts si le nombre de tweets de Toto est supérieur à 50, filtrer ceux dans lesquels est mentionné France puis les afficher, sinon 
+- Recupererd'une part tous les tweets de toto ayant #UsaLections et les afficher et d'autr,e parts si le nombre de tweets de Toto est supérieur à 50, filtrer ceux dans lesquels est mentionné France puis les afficher, sinon chercher tous ses followers.
 
 ![](./images/sample2.jpg)
 
 # Note Installation 
 
-- Importer 
+Il faut au préalable avoir eclipse modeling et s'assurer sur que les packages Acceleo et Sirius sont présents.
+
+- Faire un clone du 
+```sh
+  git clone https://github.com/ymaiga/IMA.git
+```
+
+- Importer dans eclipse les projets :
+  - ImaModel2
+  - ImaModel2.edit
+  - ImaModel2.editor
+  - ImaModel2.tests
+  
+ - Toujours dans eclipse, faire un clic droit le projet et faire : run as > Eclipse Application 
+ 
+ Une nouvelle instance d'eclipse se lance. Dans cette nouvelle instance, il faut importer les projets : 
+ 
+ - myproject.desing
+ - esir3.ima.twitter.compilator 
+ 
+ 
+
 
 # Technologies utilisées 
 
