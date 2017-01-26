@@ -42,5 +42,12 @@ public interface LibTwI {
 	 * @return
 	 */
 	public int getPropNegatif(List<String> params);
+	
+	/**@author AliMohamed
+	 * 
+	 * @param requete
+	 * @return
+	 */
+	public int nbFollowers(List<String> requete);
 
 }
