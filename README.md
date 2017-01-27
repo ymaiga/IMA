@@ -2,7 +2,9 @@
 
 Ce projet universitaire a pour but de mettre en pratique les acquis du cours d'Ingénierie des modèles de l'ESIR pour l'année universitaire 2016/2017 dans lequel la notion de DSL (Domain Specific Language) était au centre. 
 
-A partir d'un métamodel Ecore de récupération et d'analyse de tweets que nous avons mis en place, l'objectif était de mettre en place :
+L'objectif est de recuperer des tweets et d'appliquer des traitements sur ces derniers (commande d'affichage et de statistique).
+
+Nous avons ainsi mi en place :
 
 - Un éditeur graphique avec Sirius
 - Un générateur de code qui génère du code java allant rechercher des tweets et des traitements à ces derniers selon les commandes du métamodèle.
@@ -23,7 +25,7 @@ A partir d'un métamodel Ecore de récupération et d'analyse de tweets que nous
 
 Il faut au préalable avoir eclipse modeling et s'assurer que les packages Acceleo et Sirius sont présents.
 
-- Faire un clone du 
+- Faire un clone de la repository 
 ```sh
   git clone https://github.com/ymaiga/IMA.git
 ```
@@ -52,7 +54,7 @@ Il faut au préalable avoir eclipse modeling et s'assurer que les packages Accel
  -Dtwitter4j.oauth.accessTokenSecret=
  ```
  
- Afin d'utiliser les commandes plot qui utilise R, il faut au préalable avoir R installé sur son poste, ajouter le package "Rserve" et lancer une instance de la librairie commme suit :
+ Afin d'utiliser la commande **plot** qui utilise **R**, il faut au préalable avoir **R** installé sur son poste, ajouter le package **"Rserve"** et lancer une instance de la librairie commme suit :
  
  ```R
 install.package("Rserve")
@@ -65,7 +67,7 @@ Rserve()
 
  ```
  
- Pour compiler le projet, il faut renseigner les champs suivants dans run configurations: 
+ Pour générer le code pour un modèle, il faut faire  **Run As > Launch Acceleo Application** sur le projet  **esir3.ima.twitter.compilator** et renseigner les champs différents champs comme sur l'image suivante : 
  
  ![](./images/runConfigurations.JPG)
 
@@ -74,7 +76,10 @@ Rserve()
 
 # Technologies utilisées 
 
-  - Sirius, Acceleo, Java, Twitter4J, RServe
+  - Sirius :  l'éditeur graphique
+  - Acceleo : Pour le generateur de code 
+  - Twitter4J : API pour recuperer les tweets
+  - RServe : API pour executer du code R depuis Java
 
 # TODO
 - Implementer la commande followers 
