@@ -82,5 +82,7 @@ Rserve()
   - RServe : API pour executer du code R depuis Java
 
 # TODO
-- Implementer la commande followers 
-- Enrichir la liste des commandes de stats sur les tweets
+- [] Tester davantage les differents projets
+- [] Automatiser l'exécution des programmes
+- [] Implementer la commande followers 
+- [] Enrichir la liste des commandes de stats sur les tweets
